@@ -1,11 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ChevronDown } from "lucide-react"
 
 
-const slides= [
+const slides = [
   {
     title: "Grow Faster. Reach Reliably. Scale Efficiently.",
     description: "Data Center solutions crafted to unlock your digital potential",
@@ -20,6 +20,14 @@ const slides= [
 
 export default function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+    }, 3000)
+
+    return () => clearInterval(timer)
+  }, [])
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
@@ -38,7 +46,7 @@ export default function Banner() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="container mx-auto flex h-full flex-col items-start justify-center px-4 text-white"
         >
           <h1 className="mb-4 max-w-3xl text-5xl font-bold leading-tight md:text-6xl">{slides[currentSlide].title}</h1>
