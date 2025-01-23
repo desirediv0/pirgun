@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       >
       <Navbar />
       <main className="md:pl-64">
-        <div className="mx-auto p-2">{children}</div>
+        <div className="mx-auto">{children}</div>
       </main>
       
       
