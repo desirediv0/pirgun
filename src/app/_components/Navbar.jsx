@@ -19,7 +19,7 @@ const menuItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const  router = useRouter()
+  const router = useRouter()
 
   return (
     <>
@@ -27,12 +27,14 @@ export default function Navbar() {
       <motion.nav
         initial={{ x: -300 }}
         animate={{ x: 0 }}
-        className="hidden md:flex flex-col fixed left-0 top-0 h-screen w-64 bg-[#E6F3F5] border-r"
+        className="hidden md:flex flex-col fixed left-0 top-0 h-screen w-64 bg-[#E6EEF5] border-r"
       >
-        <div className="h-24 flex items-center justify-center border-b ">
+        <div className="h-24 flex items-center justify-center border-b bg-white">
           <motion.div 
-            onClick={() => router.push("/") }
-           whileHover={{ scale: 1.05 }} className="w-40 h-16 relative cursor-pointer">
+            onClick={() => router.push("/")}
+            whileHover={{ scale: 1.05 }} 
+            className="w-40 h-16 relative cursor-pointer"
+          >
             <Image src="/logo.png" layout="fill" objectFit="contain" alt="Logo" />
           </motion.div>
         </div>
@@ -42,9 +44,9 @@ export default function Navbar() {
             {menuItems.map((item) => (
               <motion.li
                 key={item.name}
-                whileHover={{ x: 10, color: "#83CD20" }}
+                whileHover={{ x: 10, color: "#87BD2B" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="text-lg font-medium text-gray-700"
+                className="text-lg font-medium text-[#00488D]"
               >
                 <Link href={item.href}>{item.name}</Link>
               </motion.li>
@@ -52,10 +54,10 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <motion.div className="p-6 border-t " whileHover={{ scale: 1.02 }}>
+        <motion.div className="p-6 border-t bg-white" whileHover={{ scale: 1.02 }}>
           <motion.button
-            className="w-full bg-[#83CD20] text-white py-3 px-4 rounded-full text-lg font-medium shadow-lg"
-            whileHover={{ scale: 1.05, backgroundColor: "#034833" }}
+            className="w-full bg-[#00488D] text-white py-3 px-4 rounded-lg text-lg font-medium shadow-lg"
+            whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
             whileTap={{ scale: 0.95 }}
           >
             Appointment
@@ -74,12 +76,12 @@ export default function Navbar() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="text-gray-700 p-2"
+            className="text-[#00488D] p-2"
           >
             <Menu size={28} />
           </motion.button>
 
-          <div onClick={() => router.push("/") } className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+          <div onClick={() => router.push("/")} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
             <Image src="/logo.png" width={120} height={40} alt="Logo" />
           </div>
         </div>
@@ -101,16 +103,23 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 20 }}
-              className="fixed top-0 left-0 bottom-0 w-[90%] bg-[#E6F3F5] z-50 md:hidden"
+              className="fixed top-0 left-0 bottom-0 w-[90%] bg-[#E6EEF5] z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
-                <div className="h-24 flex items-center justify-between px-6 border-b ">
-                  <Image src="/logo.png" width={120} height={40} alt="Logo" onClick={() => router.push("/") }  className="cursor-pointer"/>
+                <div className="h-24 flex items-center justify-between px-6 border-b bg-white">
+                  <Image 
+                    src="/logo.png" 
+                    width={120} 
+                    height={40} 
+                    alt="Logo" 
+                    onClick={() => router.push("/")} 
+                    className="cursor-pointer"
+                  />
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-700 p-2"
+                    className="text-[#00488D] p-2"
                   >
                     <X size={24} />
                   </motion.button>
@@ -121,9 +130,9 @@ export default function Navbar() {
                     {menuItems.map((item) => (
                       <motion.li
                         key={item.name}
-                        whileHover={{ x: 10, color: "#83CD20" }}
+                        whileHover={{ x: 10, color: "#87BD2B" }}
                         transition={{ type: "spring", stiffness: 300 }}
-                        className="text-lg font-medium text-gray-700"
+                        className="text-lg font-medium text-[#00488D]"
                       >
                         <Link href={item.href} onClick={() => setIsOpen(false)}>
                           {item.name}
@@ -133,10 +142,10 @@ export default function Navbar() {
                   </ul>
                 </div>
 
-                <div className="p-6 border-t ">
+                <div className="p-6 border-t bg-white">
                   <motion.button
-                    className="w-full bg-[#3b895a] text-white py-3 px-4 rounded-full text-lg font-medium shadow-lg"
-                    whileHover={{ scale: 1.05, backgroundColor: "#034833" }}
+                    className="w-full bg-[#00488D] text-white py-3 px-4 rounded-lg text-lg font-medium shadow-lg"
+                    whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsOpen(false)}
                   >
