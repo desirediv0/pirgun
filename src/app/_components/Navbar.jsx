@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -18,6 +19,7 @@ const menuItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const  router = useRouter()
 
   return (
     <>
@@ -28,7 +30,9 @@ export default function Navbar() {
         className="hidden md:flex flex-col fixed left-0 top-0 h-screen w-64 bg-[#E6F3F5] border-r"
       >
         <div className="h-24 flex items-center justify-center border-b ">
-          <motion.div whileHover={{ scale: 1.05 }} className="w-40 h-16 relative">
+          <motion.div 
+            onClick={() => router.push("/") }
+           whileHover={{ scale: 1.05 }} className="w-40 h-16 relative cursor-pointer">
             <Image src="/logo.png" layout="fill" objectFit="contain" alt="Logo" />
           </motion.div>
         </div>
@@ -75,7 +79,7 @@ export default function Navbar() {
             <Menu size={28} />
           </motion.button>
 
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div onClick={() => router.push("/") } className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
             <Image src="/logo.png" width={120} height={40} alt="Logo" />
           </div>
         </div>
@@ -101,7 +105,7 @@ export default function Navbar() {
             >
               <div className="flex flex-col h-full">
                 <div className="h-24 flex items-center justify-between px-6 border-b ">
-                  <Image src="/logo.png" width={120} height={40} alt="Logo" />
+                  <Image src="/logo.png" width={120} height={40} alt="Logo" onClick={() => router.push("/") }  className="cursor-pointer"/>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
