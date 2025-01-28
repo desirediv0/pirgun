@@ -11,9 +11,9 @@ export default function Home() {
     <Banner />
     <WhyChooseUs />
     <CountryCarousel/>
+    <VisaCategories/>
     <OfferHero />
     <AnimatedStatsCounter />
-    <VisaCategories/>
     </>
   );
 }

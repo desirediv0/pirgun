@@ -9,67 +9,87 @@ const visaTypes = [
   {
     title: "Business Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
-    image: "/placeholder.svg",
+    image: "/choose-us-left-img.webp",
     icon: "🏢",
   },
   {
     title: "Working Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
-    image: "/placeholder.svg",
+    image: "/choose-us-right-img.webp",
     icon: "💼",
   },
   {
     title: "Student Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
-    image: "/placeholder.svg",
+    image: "/choose-us-left-img.webp",
     icon: "🎓",
   },
   {
     title: "Tourist Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
-    image: "/placeholder.svg",
+    image: "/choose-us-right-img.webp",
     icon: "✈️",
   },
 ]
 
+
 export default function VisaCategories() {
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B]">VISA CATEGORY</span>
+          <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B]">
+            VISA CATEGORY
+          </span>
           <h2 className="text-4xl font-bold text-[#004225]">
             Seeking Adventure Thrills
             <br />
             and Excitement Await
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {visaTypes.map((visa, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group rounded-lg bg-white p-6 shadow-lg transition-all"
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="flex flex-col group sm:flex-row bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="relative mb-4 h-48 overflow-hidden rounded-lg">
-                <Image src={visa.image || "/placeholder.svg"} alt={visa.title} fill className="object-cover" />
+              {/* Left side - Image */}
+              <div className="relative w-full sm:w-2/5 h-[250px] sm:h-auto overflow-hidden">
+              <Image 
+                src={visa.image} 
+                alt={visa.title} 
+                fill 
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+
+              {/* Right side - Content */}
+              <div className="w-full sm:w-3/5 p-6 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">{visa.icon}</span>
+                    <h3 className="text-xl font-semibold text-[#004225]">
+                      {visa.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">{visa.description}</p>
+                </div>
+                
+                               <Link
+                  href="#"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-lg 
+                    group-hover:bg-[#87BD2B]  transition-all duration-300 border border-[#87BD2B]"
+                >
+                  <ArrowRight className="h-5 w-5 group-hover:text-white transition-all duration-300 -rotate-45 group-hover:rotate-0" />
+                </Link>
               </div>
-              <h3 className="mb-2 flex items-center text-xl font-semibold">
-                <span className="mr-2">{visa.icon}</span>
-                {visa.title}
-              </h3>
-              <p className="mb-4 text-gray-600">{visa.description}</p>
-              <Link
-                href="#"
-                className="inline-flex items-center text-[#87BD2B] transition-all group-hover:translate-x-2"
-              >
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
             </motion.div>
           ))}
         </div>
