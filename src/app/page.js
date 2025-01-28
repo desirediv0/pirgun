@@ -10,10 +10,10 @@ export default function Home() {
     <>
     <Banner />
     <WhyChooseUs />
+    <CountryCarousel/>
     <OfferHero />
     <AnimatedStatsCounter />
     <VisaCategories/>
-    <CountryCarousel/>
     </>
   );
 }

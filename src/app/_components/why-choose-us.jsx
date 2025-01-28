@@ -8,6 +8,7 @@ import {  Phone,
     FileText, 
     Globe,
     ClipboardList } from "lucide-react"
+import InfiniteBrand from "./Infinity-brand"
 
 export default function WhyChooseUs() {
   return (
@@ -103,7 +104,7 @@ export default function WhyChooseUs() {
 
             <div className="flex flex-wrap items-center gap-4">
               <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: '#87BD2B' }}
+                whileHover={{ scale: 1.05, backgroundColor: '#034833' }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center rounded-full border-2 border-[#87BD2B] px-6 py-3 font-semibold text-[#87BD2B] transition-colors hover:text-white"
               >
@@ -127,6 +128,9 @@ export default function WhyChooseUs() {
           </motion.div>
         </div>
       </div>
+      <InfiniteBrand brands={["CustomBrand1", "CustomBrand2", "CustomBrand3"]} 
+        className="mt-5"
+      />
     </section>
   )
 }

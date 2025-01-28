@@ -1,0 +1,40 @@
+"use client"
+
+import React from 'react'
+
+const InfiniteBrand = ({ 
+  brands = ["ExpertVisa", "GlobalEase", "SwiftPass", "TravelPro", "VisaFlow", "WorldGate"],
+  className = "",
+  itemClassName = "" 
+}) => {
+  return (
+    <div className={`w-full py-8 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] ${className}`}>
+      <ul className='flex items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 animate-infinite-scroll'>
+        {brands.map((brand, index) => (
+          <li key={index}>
+            <a
+              href="#"
+              className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
+            >
+              {brand}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <ul className='flex items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 animate-infinite-scroll' aria-hidden='true'>
+        {brands.map((brand, index) => (
+          <li key={index}>
+            <a
+              href="#"
+              className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
+            >
+              {brand}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export default InfiniteBrand
