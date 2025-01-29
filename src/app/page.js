@@ -1,4 +1,3 @@
-import AnimatedStatsCounter from "./_components/animated-stats-counter";
 import Banner from "./_components/Banner";
 import CountryCarousel from "./_components/country-carosuel";
 import OfferHero from "./_components/offer-hero";
@@ -13,7 +12,7 @@ export default function Home() {
     <CountryCarousel/>
     <VisaCategories/>
     <OfferHero />
-    <AnimatedStatsCounter />
+   
     </>
   );
 }
