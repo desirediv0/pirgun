@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${PlusJakartaSans.variable} antialiased font-plus-jakarta-sans`}
+        className={`${geistSans.variable} ${geistMono.variable} ${PlusJakartaSans.variable} antialiased font-plus-jakarta-sans bg-[#87BD2B]/5 `}
       >
       <Navbar />
       <main className="md:pl-64">

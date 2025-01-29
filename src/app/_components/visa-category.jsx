@@ -56,7 +56,8 @@ export default function VisaCategories() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col group sm:flex-row bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+            className="flex flex-col group sm:flex-row  rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 
+            border border-[#384e11]/20"
             >
               {/* Left side - Image */}
               <div className="relative w-full sm:w-2/5 h-[250px] sm:h-auto overflow-hidden">
@@ -74,21 +75,24 @@ export default function VisaCategories() {
               <div className="w-full sm:w-3/5 p-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">{visa.icon}</span>
+            
                     <h3 className="text-xl font-semibold text-[#004225]">
                       {visa.title}
                     </h3>
                   </div>
                   <p className="text-gray-600 mb-4">{visa.description}</p>
                 </div>
-                
-                               <Link
+                <div className="flex items-center justify-between w-full">
+                <Link
                   href="#"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-lg 
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-lg 
                     group-hover:bg-[#87BD2B]  transition-all duration-300 border border-[#87BD2B]"
                 >
-                  <ArrowRight className="h-5 w-5 group-hover:text-white transition-all duration-300 -rotate-45 group-hover:rotate-0" />
+                  <ArrowRight className="h-5 w-5 group-hover:text-white transition-all duration-300 -rotate-45 text-[#87BD2B] group-hover:rotate-0" />
                 </Link>
+                <span className="text-3xl">{visa.icon}</span>
+                </div>
+                
               </div>
             </motion.div>
           ))}

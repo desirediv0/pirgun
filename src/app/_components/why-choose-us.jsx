@@ -12,7 +12,7 @@ import InfiniteBrand from "./Infinity-brand"
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-[#87BD2B]/5 py-16">
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Left Column with Images */}
