@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Footer from "./_components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
       <Navbar />
       <main className="md:pl-64">
         <div className="mx-auto">{children}</div>
+      <Footer />
       </main>
       
       
