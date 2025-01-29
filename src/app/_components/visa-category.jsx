@@ -3,32 +3,32 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from "lucide-react"
 
 const visaTypes = [
   {
     title: "Business Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     image: "/choose-us-left-img.webp",
-    icon: "🏢",
+    icon: ShieldCheck,
   },
   {
     title: "Working Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     image: "/choose-us-right-img.webp",
-    icon: "💼",
+    icon: MapPinHouse,
   },
   {
     title: "Student Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     image: "/choose-us-left-img.webp",
-    icon: "🎓",
+    icon: GraduationCap,
   },
   {
     title: "Tourist Visa",
     description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
     image: "/choose-us-right-img.webp",
-    icon: "✈️",
+    icon: Binoculars,
   },
 ]
 
@@ -90,7 +90,10 @@ export default function VisaCategories() {
                 >
                   <ArrowRight className="h-5 w-5 group-hover:text-white transition-all duration-300 -rotate-45 text-[#87BD2B] group-hover:rotate-0" />
                 </Link>
-                <span className="text-3xl">{visa.icon}</span>
+                <span >
+                  <visa.icon size={30} className="text-[#004225]" />
+                </span>
+              
                 </div>
                 
               </div>
