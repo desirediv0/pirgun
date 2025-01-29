@@ -44,10 +44,10 @@ export function TeamSection() {
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         <div className="flex items-center gap-2 mb-4">
           <GraduationCap className="w-6 h-6 text-[#004D2C]" />
-          <span className="text-[#004D2C] font-semibold uppercase">Our Coaching</span>
+          <span className="text-[#004D2C] font-semibold uppercase text-xs">Our Coaching</span>
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-bold text-[#004D2C] mb-12 max-w-2xl">
+        <h2 className="text-4xl font-bold text-[#004D2C] mb-12 max-w-2xl">
           Exploring the Unknown Voyages of Wonder
         </h2>
 
@@ -56,18 +56,19 @@ export function TeamSection() {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                className="flex items-center justify-between p-6 bg-white rounded-2xl shadow-sm hover:shadow-md  border border-[#384e11]/20 transition-shadow group"
               >
                 <div>
                   <h3 className="text-xl font-semibold text-[#004D2C]">{member.name}</h3>
                   <p className="text-gray-500">{member.role}</p>
                 </div>
-                <button
-                  className="p-2 rounded-full hover:bg-[#004D2C]/5 transition-colors"
-                  aria-label={`Learn more about ${member.name}`}
+                <Link
+                  href="#"
+                  className="inline-flex items-center justify-center w-12 h-12 rounded-full 
+                    group-hover:bg-[#87BD2B]  transition-all duration-300 border border-[#87BD2B]"
                 >
-                  <ArrowRight className="w-5 h-5 text-[#004D2C]" />
-                </button>
+                  <ArrowRight className="h-5 w-5 group-hover:text-white transition-all duration-300 -rotate-45 text-[#87BD2B] group-hover:rotate-0" />
+                </Link>
               </div>
             ))}
           </div>
@@ -81,7 +82,7 @@ export function TeamSection() {
                 height={500}
                 />
             </div>
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 flex gap-4 shadow-xl">
+            <div className="absolute bottom-20 md:bottom-6 left-1/2 md:left-[45%] -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 flex gap-4 shadow-xl">
                 {socials.map(({ icon: Icon, href, label }) => (
                 <Link 
                     key={label} 

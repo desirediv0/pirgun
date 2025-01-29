@@ -55,7 +55,7 @@ export function TestimonialSection() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 px-8">
       <div className="grid md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
