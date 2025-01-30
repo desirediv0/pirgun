@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${PlusJakartaSans.variable} antialiased font-plus-jakarta-sans bg-[#87BD2B]/5 `}
+        className={`${geistSans.variable} ${geistMono.variable} ${PlusJakartaSans.variable} antialiased font-plus-jakarta-sans  `}
       >
       <Navbar />
-      <main className="md:pl-64">
+      <main className="md:pl-60">
         <div className="mx-auto">{children}</div>
       <Footer />
       </main>

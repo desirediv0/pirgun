@@ -29,7 +29,7 @@ const countries = [
 
 export function AvailableCountries() {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-16 relative">
+    <section className="max-w-7xl mx-auto px-8 py-16 relative ">
       <div className="flex justify-between items-start mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">

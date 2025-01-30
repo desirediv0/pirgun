@@ -35,7 +35,7 @@ const visaTypes = [
 
 export default function VisaCategories() {
   return (
-    <section className="py-16 overflow-x-hidden">
+    <section className="py-16 overflow-x-hidden bg-[#87BD2B]/5">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B] uppercase">
