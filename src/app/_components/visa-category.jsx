@@ -7,26 +7,26 @@ import { ArrowRight, Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from 
 
 const visaTypes = [
   {
-    title: "Business Visa",
-    description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
+    title: "HVAC Solutions",
+    description: "We provide high-efficiency Heating, Ventilation, and Air Conditioning (HVAC) solutions tailored for pharmaceutical units, healthcare facilities, and industrial plants. Our HVAC systems enhance air quality, optimize energy efficiency, and maintain compliance with global standards",
     image: "/choose-us-left-img.webp",
     icon: ShieldCheck,
   },
   {
-    title: "Working Visa",
-    description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
+    title: "Clean Room Solutions",
+    description: "From concept to execution, we design clean room environments for pharmaceutical labs, biotech firms, and healthcare facilities.",
     image: "/choose-us-right-img.webp",
     icon: MapPinHouse,
   },
   {
-    title: "Student Visa",
-    description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
+    title: "Project Consultancy",
+    description: "With deep industry expertise, we provide comprehensive consultancy services to streamline your operations. From electrical system design to setting up softgel and cosmetic manufacturing plants, our tailored solutions ensure efficiency, compliance, and scalability.u",
     image: "/choose-us-left-img.webp",
     icon: GraduationCap,
   },
   {
-    title: "Tourist Visa",
-    description: "Et purus duis sollicitudin dignissim habitant. Egestas nulla quis the venenatis cras sed eu",
+    title: "Project Execution & Validation",
+    description: "Prigun Air Systems ensures seamless installation, execution, and validation of HVAC and clean room systems. We provide comprehensive documentation, compliance checks, and system performance validation to meet stringent industry standards.",
     image: "/choose-us-right-img.webp",
     icon: Binoculars,
   },
@@ -38,13 +38,13 @@ export default function VisaCategories() {
     <section className="py-16 overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B]">
-            VISA CATEGORY
+          <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B] uppercase">
+          Our Services
           </span>
           <h2 className="text-4xl font-bold text-[#004225]">
-            Seeking Adventure Thrills
+          Innovative Solutions for a Safer, 
             <br />
-            and Excitement Await
+            Smarter Future
           </h2>
         </div>
         

@@ -7,34 +7,28 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const countries = [
   {
-    name: "Canada",
+    name: "Pharmaceuticals",
     image: "/choose-us-left-img.webp",
     flag: "🇨🇦",
-    description: "Experience the beauty of Canada's diverse landscapes and culture"
+    description: "Ensuring regulatory-compliant HVAC and clean rooms."
   },
   {
-    name: "Bangladesh",
+    name: "Healthcare ",
     image: "/choose-us-left-img.webp",
     flag: "🇧🇩",
-    description: "Discover the rich heritage and warmth of Bangladesh"
+    description: "Air purification solutions for hospitals and laboratories."
   },
   {
-    name: "United Kingdom",
+    name: "Food Processing",
     image: "/choose-us-left-img.webp",
     flag: "🇬🇧",
-    description: "Explore the historic charm of the United Kingdom"
+    description: "Climate-controlled systems for hygiene and safety."
   },
   {
-    name: "United States",
+    name: "Industrial Manufacturing",
     image: "/choose-us-left-img.webp",
     flag: "🇺🇸",
-    description: "Adventure through America's vast and varied territories"
-  },
-  {
-    name: "Sri Lanka",
-    image: "/choose-us-left-img.webp",
-    flag: "🇱🇰",
-    description: "Immerse in Sri Lanka's tropical paradise and ancient wisdom"
+    description: "Tailored air systems for precision industries."
   },
 ]
 
@@ -75,7 +69,7 @@ const CountryCard = ({ country, isExpanded, onMouseEnter }) => {
               whileHover={{ scale: 1.05, backgroundColor: '#004225' }}
               className="mt-4 rounded-full border border-white px-6 py-2 transition-all text-white"
             >
-              Apply Now
+              Contact Now
             </motion.button>
           </motion.div>
         )}
@@ -102,12 +96,12 @@ export default function CountryImageCarousel() {
         <div className="mb-12 flex items-center justify-between md:px-16">
           <div>
             <span className="mb-2 inline-block text-sm font-semibold text-[#87BD2B]">
-              OUR COUNTRIES
+            Industried we served
             </span>
             <h2 className="text-4xl font-bold text-white">
-              Making Memories Around
+            Powering Industries, 
               <br />
-              World Unforgettable
+              Transforming Environments
             </h2>
           </div>
           <div className="flex gap-4">

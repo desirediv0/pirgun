@@ -35,7 +35,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }} 
             className="relative cursor-pointer"
           >
-            <Image src="/logo.png" objectFit="contain" width={150} height={150} alt="Logo" />
+            <Image src="/logo.png" objectFit="contain" width={160} height={160} alt="Logo" />
           </motion.div>
         </div>
 

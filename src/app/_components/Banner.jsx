@@ -33,7 +33,7 @@ export default function Banner() {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
       <video autoPlay muted loop className="absolute inset-0 h-full w-full object-cover">
-        <source src="/bg-video.mp4" type="video/mp4" />
+        <source src="/pirgun.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}

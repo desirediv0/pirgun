@@ -47,13 +47,13 @@ export default function WhyChooseUs() {
             </span>
 
             <h2 className="mb-6 text-4xl font-bold text-[#004225] lg:text-5xl">
-              Where Wanderlust Meets
+            Precision in Every Breath, 
               <br />
-              Dream Destinations
+              Excellence in Every Flow
             </h2>
 
             <p className="mb-8 text-gray-600 text-sm">
-              Navigate your journey with confidence through our expert visa and immigration services. We transform your travel aspirations into reality with personalized solutions and worldwide accessibility.
+            At Prigun Air Systems, we don’t just control air—we engineer environments that redefine safety, efficiency, and compliance for critical industries.
             </p>
 
             <div className="mb-8 grid gap-6 md:grid-cols-2">
@@ -65,17 +65,17 @@ export default function WhyChooseUs() {
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#87BD2B]">
                 <ClipboardList className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-[#004225]">Passport Plus</h3>
+                <h3 className="mb-2 text-xl font-semibold text-[#004225]">Industry Expertise</h3>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>Beyond Border Immigration</span>
+                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
+                    <span>Proven experience in pharmaceuticals, healthcare, and industrial sectors.</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  {/* <div className="flex items-center gap-2 text-gray-600">
                     <Check className="h-5 w-5 text-[#87BD2B]" />
                     <span>Worldwide Visa Assistance</span>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
 
@@ -84,20 +84,20 @@ export default function WhyChooseUs() {
                 className="rounded-3xl bg-none p-5  border border-[#87BD2B]/30"
               >
                <div className="flex items-center gap-2">
-               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#87BD2B]">
+               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[#87BD2B] p-2">
                 <Globe className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-[#004225]">Global Entry</h3>
+                <h3 className="mb-2 text-xl font-semibold text-[#004225]">End-to-End Project Excellence</h3>
                </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>GlobeTrot Visa Services</span>
+                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
+                    <span>From design to validation, we ensure seamless execution.</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-600">
+                  {/* <div className="flex items-center gap-2 text-gray-600">
                     <Check className="h-5 w-5 text-[#87BD2B]" />
                     <span>Infinity Visa Solutions</span>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>
