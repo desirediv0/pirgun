@@ -12,7 +12,7 @@ import InfiniteBrand from "./Infinity-brand"
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-[url(/logo-icon-bg.png)] bg-no-repeat bg-auto bg-center">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Left Column with Images */}
@@ -104,9 +104,9 @@ export default function WhyChooseUs() {
 
             <div className="flex flex-wrap items-center gap-4">
               <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: '#034833' }}
+                whileHover={{ scale: 1.05, backgroundColor: '#00488D' }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center rounded-full border-2 border-[#87BD2B] px-6 py-3 font-semibold text-[#87BD2B] transition-colors hover:text-white"
+                className="inline-flex items-center rounded-full border-2 border-[#87BD2B] px-6 py-3 font-semibold text-[#87BD2B] transition-all hover:text-white hover:border-[#00488D]"
               >
                 Read More
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,14 +121,14 @@ export default function WhyChooseUs() {
                 </motion.div>
                 <div>
                   <div className="text-sm text-gray-600">Need help?</div>
-                  <div className="font-semibold text-[#87BD2B]">(808) 555-0111</div>
+                  <div className="font-semibold text-[#87BD2B]">+911247118233</div>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-      <InfiniteBrand brands={["CustomBrand1", "CustomBrand2", "CustomBrand3"]} 
+      <InfiniteBrand brands={["/lupin.png", "/jubilant-infra.png", "/akums.webp", "/nectar.png"]} 
         className="mt-5"
       />
     </section>

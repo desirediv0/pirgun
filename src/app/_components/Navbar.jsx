@@ -29,13 +29,13 @@ export default function Navbar() {
         animate={{ x: 0 }}
         className="hidden md:flex flex-col fixed left-0 top-0 h-screen w-64 bg-[#E6EEF5] border-r"
       >
-        <div className="h-24 flex items-center justify-center border-b bg-white">
+        <div className="flex items-center justify-center border-b bg-white">
           <motion.div 
             onClick={() => router.push("/")}
             whileHover={{ scale: 1.05 }} 
-            className="w-40 h-16 relative cursor-pointer"
+            className="relative cursor-pointer"
           >
-            <Image src="/logo.png" layout="fill" objectFit="contain" alt="Logo" />
+            <Image src="/logo.png" objectFit="contain" width={150} height={150} alt="Logo" />
           </motion.div>
         </div>
 

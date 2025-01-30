@@ -1,5 +1,6 @@
 "use client"
 
+import Image from 'next/image'
 import React from 'react'
 
 const InfiniteBrand = ({ 
@@ -12,24 +13,24 @@ const InfiniteBrand = ({
       <ul className='flex items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 animate-infinite-scroll'>
         {brands.map((brand, index) => (
           <li key={index}>
-            <a
-              href="#"
+            <Image
+              src={brand}
+              width={180}
+              height={100}
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
-            >
-              {brand}
-            </a>
+            />
           </li>
         ))}
       </ul>
       <ul className='flex items-center justify-center md:justify-start sm:[&_li]:mx-8 [&_li]:mx-4 animate-infinite-scroll' aria-hidden='true'>
         {brands.map((brand, index) => (
           <li key={index}>
-            <a
-              href="#"
+            <Image
+              src={brand}
+              width={180}
+              height={100}
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
-            >
-              {brand}
-            </a>
+            />
           </li>
         ))}
       </ul>
