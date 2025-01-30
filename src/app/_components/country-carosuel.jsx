@@ -8,25 +8,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const countries = [
   {
     name: "Pharmaceuticals",
-    image: "/choose-us-left-img.webp",
+    image: "/pharma.png",
     flag: "🇨🇦",
     description: "Ensuring regulatory-compliant HVAC and clean rooms."
   },
   {
     name: "Healthcare ",
-    image: "/choose-us-left-img.webp",
+    image: "/healtcare.png",
     flag: "🇧🇩",
     description: "Air purification solutions for hospitals and laboratories."
   },
   {
     name: "Food Processing",
-    image: "/choose-us-left-img.webp",
+    image: "/foodprocessing.png",
     flag: "🇬🇧",
     description: "Climate-controlled systems for hygiene and safety."
   },
   {
     name: "Industrial Manufacturing",
-    image: "/choose-us-left-img.webp",
+    image: "/industrial-manufacturing.png",
     flag: "🇺🇸",
     description: "Tailored air systems for precision industries."
   },

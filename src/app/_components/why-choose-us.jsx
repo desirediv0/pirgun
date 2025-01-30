@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
           {/* Left Column with Images */}
           <div className="relative grid lg:grid-cols-2 gap-2">
             <div className="flex flex-col h-full items-center justify-evenly gap-3">
-                <Image src="/choose-us-left-img.webp" alt="left"  width={250} height={250} className="rounded-xl"/>
+                <Image src="/img1.png" alt="left"  width={250} height={250} className="rounded-xl"/>
                 <Image src="/choose-us-circle-img.webp" alt="right"  width={200} height={200} className="animate-spin"/>
             </div>
             <div className="flex flex-col h-full items-center justify-evenly w-full md:p-5 gap-3">
@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
                 <p>Experience</p>
               </span>
             </div>
-                <Image src="/choose-us-right-img.webp" alt="left"  width={800} height={800} className="rounded-xl "/>
+                <Image src="/img2.png" alt="left"  width={800} height={800} className="rounded-xl "/>
             </div>
           </div>
 
