@@ -22,11 +22,6 @@ const coachingData = [
     description: "There are many variati of passages of engineer",
     image: "/client/jubilant.jpeg",
   },
-  {
-    title: "Akums",
-    description: "There are many variati of passages of engineer",
-    image: "/client/akums.jpeg",
-  },
 ]
 
 export function CoachingCarousel() {
