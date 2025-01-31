@@ -16,7 +16,7 @@ export default function Home() {
     <WhyChooseUs />
     <CountryCarousel/>
     <VisaCategories/>
-    <AvailableCountries />
+    {/* <AvailableCountries /> */}
     <OfferHero />
    <CoachingCarousel />
    <TeamSection />
