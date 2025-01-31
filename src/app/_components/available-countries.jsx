@@ -29,7 +29,7 @@ const countries = [
 
 export function AvailableCountries() {
   return (
-    <section className="max-w-7xl mx-auto px-8 py-16 relative ">
+    <section className="max-w-7xl mx-auto px-8 pt-16 relative ">
       <div className="flex justify-between items-start mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
@@ -48,7 +48,7 @@ export function AvailableCountries() {
         </button>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-6">
+      {/* <div className="grid md:grid-cols-4 gap-6">
           {countries.map((country, index) => (
           <motion.div 
       key={index} 
@@ -89,7 +89,7 @@ export function AvailableCountries() {
       </ul>
     </motion.div>
     ))}
-      </div>
+      </div> */}
 
     </section>
   )

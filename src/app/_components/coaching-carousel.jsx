@@ -8,19 +8,24 @@ import Link from "next/link"
 
 const coachingData = [
   {
-    title: "OET Coaching",
+    title: "Lupin Pharmaceuticals",
     description: "There are many variati of passages of engineer",
-    image: "/choose-us-left-img.webp",
+    image: "/client/lupin.jpeg",
   },
   {
-    title: "TOFEL Coaching",
+    title: "Hamdard",
     description: "There are many variati of passages of engineer",
-    image: "/choose-us-right-img.webp",
+    image: "/client/hamdard.jpeg",
   },
   {
-    title: "IELTS Coaching",
+    title: "Jubilant Infrastructure",
     description: "There are many variati of passages of engineer",
-    image: "/choose-us-left-img.webp",
+    image: "/client/jubilant.jpeg",
+  },
+  {
+    title: "Akums",
+    description: "There are many variati of passages of engineer",
+    image: "/client/akums.jpeg",
   },
 ]
 
