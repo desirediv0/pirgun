@@ -24,7 +24,7 @@ export default function Banner() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 3000)
+    }, 6000)
 
     return () => clearInterval(timer)
   }, [])
