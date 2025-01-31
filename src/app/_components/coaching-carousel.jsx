@@ -44,11 +44,11 @@ export function CoachingCarousel() {
           <div className="flex items-center gap-2 mb-4">
             <GraduationCap className="w-6 h-6 text-[#004D2C]" />
             <span className="text-[#004D2C] font-semibold uppercase tracking-wide text-xs">
-              Supporting Coaching
+              Stories
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#004D2C] max-w-2xl">
-            A Tapestry of Experiences Cultural Encounters
+            Success Stories
           </h2>
         </div>
 
