@@ -22,18 +22,16 @@ export default function HeroSection() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Map className="w-6 h-6 text-[#004D2C]" />
-              <span className="text-[#004D2C] font-semibold uppercase tracking-wide text-xs">Available Countries</span>
+              <span className="text-[#004D2C] font-semibold uppercase tracking-wide text-xs">Contact Us</span>
             </div>
             <h2 className="text-4xl  font-bold text-[#004D2C] max-w-2xl">
-              Urban Escapes City
-              <br />
-              Hopping Adventures
+              Contact Us Today
             </h2>
           </div>
-          <button className="bg-[#7AB641] text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#7AB641]/90 transition-colors">
+          {/* <button className="bg-[#7AB641] text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#7AB641]/90 transition-colors">
             View More
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </button> */}
         </div>
         <div className="flex flex-col md:flex-row items-stretch justify-between gap-8">
           {/* Left Image Section */}
@@ -46,7 +44,7 @@ export default function HeroSection() {
           >
             <div className="relative h-full min-h-[500px] overflow-hidden">
               <Image
-                src="/faq-info-img.webp"
+                src="/img1.png"
                 alt="Travel essentials"
                 fill
                 className="object-contain"
@@ -70,14 +68,23 @@ export default function HeroSection() {
                 <Globe className="h-8 w-8 text-white" />
               </div>
 
-              <h2 className="mt-6 text-xl  font-bold text-[#1E293B]">
+              {/* <h2 className="mt-6 text-xl  font-bold text-[#1E293B]">
                 Get our best offers quickly
               </h2>
 
               <p className="mt-4 text-gray-600 w-1/2 text-sm">
                 Lorem Ipsum is simply dummy text the printing and typese Lorem Ipsum
                 has been the industry&apos;s standard dummy
-              </p>
+              </p> */}
+              <div className="pt-3 md:pt-5">
+                <div className="py-3">
+                  <input type="text" className="border w-full px-2 py-2 rounded-lg border-lime-200 placeholder:text-black" placeholder="Robert"></input>
+                </div>
+                <div className="py-3 grid md:grid-cols-2 gap-4">
+                  <input type="text" className="border w-full px-2 py-2 rounded-lg border-lime-200 placeholder:text-black" placeholder="+ 91 99999XXXXX"></input>
+                  <input type="text" className="border w-full px-2 py-2 rounded-lg border-lime-200 text-black placeholder:text-black focus-visible:border-lime-200" placeholder="name@pirgun.com"></input>
+                </div>
+              </div>
 
               <Link
                 href="#contact"
@@ -93,10 +100,10 @@ export default function HeroSection() {
                   →
                 </motion.span>
               </Link>
-              <Image src={"/faq-left-img.webp"} alt="Travel essentials" className="object-cover
-              absolute -bottom-16 -right-2 " priority quality={100}
-                width={300} height={300}
-              />
+              {/* <Image src={"/faq-left-img.webp"} alt="Travel essentials" className="object-cover
+                absolute -bottom-16 -right-2 " priority quality={100}
+                  width={300} height={300}
+                /> */}
 
             </motion.div>
 

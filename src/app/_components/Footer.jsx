@@ -32,7 +32,7 @@ export default function Footer() {
             <Camera className="w-10 h-10 text-white" />
           </div>
           <h3 className="text-2xl font-semibold">
-            Need Any Support For<br />Tour And Visa?
+            Need Any Support For?
           </h3>
         </div>
         <div className="flex items-center gap-4">
@@ -40,7 +40,7 @@ export default function Footer() {
             <Globe className="w-10 h-10 text-white" />
           </div>
           <h3 className="text-2xl font-semibold">
-            Are You Ready For Get<br />Started Travelling?
+            Are You Ready For Get?
           </h3>
         </div>
       </div>

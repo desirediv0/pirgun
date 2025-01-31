@@ -44,11 +44,11 @@ export function TeamSection() {
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         <div className="flex items-center gap-2 mb-4">
           <GraduationCap className="w-6 h-6 text-[#004D2C]" />
-          <span className="text-[#004D2C] font-semibold uppercase text-xs">Our Coaching</span>
+          <span className="text-[#004D2C] font-semibold uppercase text-xs">Our Team</span>
         </div>
 
         <h2 className="text-4xl font-bold text-[#004D2C] mb-12 max-w-2xl">
-          Exploring the Unknown Voyages of Wonder
+          Meet Our Expert Team
         </h2>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
