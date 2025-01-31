@@ -48,7 +48,7 @@ export default function Navbar() {
                 key={item.name}
                 whileHover={{ x: 10, color: "#87BD2B" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="text-lg font-medium text-[#00488D] flex"
+                className="text-base font-medium text-[#00488D] flex"
               >
                 <span>{item.icon}</span>
                 <Link href={item.href} className="ps-2">{item.name}</Link>

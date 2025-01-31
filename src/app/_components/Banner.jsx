@@ -7,13 +7,13 @@ import { ChevronDown } from "lucide-react"
 
 const slides = [
   {
-    title: "Grow Faster. Reach Reliably. Scale Efficiently.",
-    description: "Data Center solutions crafted to unlock your digital potential",
-    cta: "Explore Data Centers",
+    title: "Joy of Pleasant Flow – Engineering Excellence for Every Industry",
+    description: "Enhancing environments with cutting-edge HVAC, clean room, and facility solutions for seamless efficiency.",
+    cta: "Explore",
   },
   {
-    title: "Get a peek into our sustainability vision",
-    description: "Discover how we're building a greener future",
+    title: "Prigun Air Systems – Where Innovation Meets the Joy of Pleasant Flow",
+    description: "Delivering precision-engineered solutions to create safe, compliant, and energy-efficient spaces.",
     cta: "Explore",
   },
 ]

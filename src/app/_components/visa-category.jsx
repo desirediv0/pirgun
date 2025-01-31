@@ -9,25 +9,25 @@ const visaTypes = [
   {
     title: "HVAC Solutions",
     description: "We provide high-efficiency Heating, Ventilation, and Air Conditioning (HVAC) solutions tailored for pharmaceutical units, healthcare facilities, and industrial plants. Our HVAC systems enhance air quality, optimize energy efficiency, and maintain compliance with global standards",
-    image: "/choose-us-left-img.webp",
+    image: "/hvac.jpeg",
     icon: ShieldCheck,
   },
   {
     title: "Clean Room Solutions",
     description: "From concept to execution, we design clean room environments for pharmaceutical labs, biotech firms, and healthcare facilities.",
-    image: "/choose-us-right-img.webp",
+    image: "/clean-room.jpeg",
     icon: MapPinHouse,
   },
   {
     title: "Project Consultancy",
     description: "With deep industry expertise, we provide comprehensive consultancy services to streamline your operations. From electrical system design to setting up softgel and cosmetic manufacturing plants, our tailored solutions ensure efficiency, compliance, and scalability.u",
-    image: "/choose-us-left-img.webp",
+    image: "/project-consultancy.jpeg",
     icon: GraduationCap,
   },
   {
     title: "Project Execution & Validation",
     description: "Prigun Air Systems ensures seamless installation, execution, and validation of HVAC and clean room systems. We provide comprehensive documentation, compliance checks, and system performance validation to meet stringent industry standards.",
-    image: "/choose-us-right-img.webp",
+    image: "/project-execution.jpeg",
     icon: Binoculars,
   },
 ]
