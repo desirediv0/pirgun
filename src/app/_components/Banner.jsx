@@ -32,12 +32,12 @@ export default function Banner() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
-      <video autoPlay muted loop className="absolute inset-0 h-full w-full object-cover">
+      <video autoPlay muted loop className="absolute inset-0 h-full w-full object-cover will-change-transform">
         <source src="/pirgun.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00488D]/60 to-[#87BD2B]/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00488D]/60 to-[#87BD2B]/60 will-change-transform"/>
 
       {/* Content */}
       <div className="relative h-full w-full">

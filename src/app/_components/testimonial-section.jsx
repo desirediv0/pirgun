@@ -7,28 +7,28 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "Working with RouteX made our immigration process seamless. Their expertise and dedication helped us achieve our dreams of studying abroad.",
+    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur,",
     author: "Sarah Johnson",
     role: "International Student",
     avatar: "/coaching-right-img.webp",
     rating: 5
   },
   {
-    quote: "The visa consultation services were exceptional. The team guided us through every step, making a complex process feel simple and manageable.",
+    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
     author: "Michael Chen",
     role: "Business Professional",
     avatar: "/coaching-right-img.webp",
     rating: 5
   },
   {
-    quote: "I'm grateful for the personalized attention and professional guidance. Their knowledge of immigration laws and procedures is outstanding.",
+    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
     author: "Emma Thompson",
     role: "Healthcare Professional",
     avatar: "/coaching-right-img.webp",
     rating: 5
   },
   {
-    quote: "The team's commitment to client success is remarkable. They went above and beyond to ensure our visa application was perfect.",
+    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
     author: "David Rodriguez",
     role: "Software Engineer",
     avatar: "/coaching-right-img.webp",
@@ -64,7 +64,7 @@ export function TestimonialSection() {
           className="relative aspect-square rounded-2xl overflow-hidden"
         >
           <Image
-            src="/testimonial-left-img.webp"
+            src="/img2.png"
             alt="Happy clients"
             fill
             className="object-cover"
