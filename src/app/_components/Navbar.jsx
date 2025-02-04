@@ -35,7 +35,7 @@ export default function Navbar() {
           <motion.div
             onClick={() => router.push("/")}
             whileHover={{ scale: 1.05 }}
-            className="relative cursor-pointer"
+            className="relative cursor-pointer mx-auto"
           >
             <Image src="/logo.png" objectFit="contain" width={160} height={160} alt="Logo" />
           </motion.div>
