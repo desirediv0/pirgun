@@ -10,14 +10,14 @@ import { useRouter } from "next/navigation"
 const menuItems = [
   { name: "Home", icon: <House />, href: "/" },
   { name: "About Us", icon: <BookUser />, href: "/about" },
-  { name: "Services", icon: <CircleCheckBig />, href: "/story" },
-  { name: "Industries Served", icon: <Factory />, href: "/story" },
-  { name: "Projects", icon: <FolderKanban />, href: "/story" },
-  { name: "Testimonials", icon: <Star />, href: "/story" },
+  { name: "Services", icon: <CircleCheckBig />, href: "/service" },
+  { name: "Industries Served", icon: <Factory />, href: "/service" },
+  { name: "Projects", icon: <FolderKanban />, href: "/service" },
+  { name: "Testimonials", icon: <Star />, href: "/service" },
   { name: "Contact", icon: <Contact />, href: "/contact" },
   { name: "Careers", icon: <ChartColumnIncreasing />, href: "/contact" },
   { name: "Company Profile", icon: <Building2 />, href: "/contact" },
-]
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)

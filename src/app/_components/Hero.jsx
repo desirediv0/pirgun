@@ -1,11 +1,24 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function Hero({bgImage, Heading}) {
+ 
   return (
-    <section className={`bg-[url(/${bgImage})] min-h-[70vh] bg-no-repeat bg-cover`}>
-        <div className='container py-20 md:py-40'>
-            <h1 className='text-3xl md:text-7xl text-center font-semibold'>{Heading}</h1>
-        </div>
-    </section>
-  )
+    <div className="relative w-full h-[250px] lg:h-[350px]">
+      <Image
+        src={`/${bgImage}`}
+        alt="Contact Banner"
+        layout="fill"
+        objectFit="cover"
+        priority
+        className="absolute inset-0"
+      />
+
+      <div className="absolute inset-0 bg-green-800 bg-opacity-50"></div>
+
+      <div className="relative z-10 flex items-center justify-center h-full text-white text-4xl font-bold">
+        {Heading}
+      </div>
+    </div>
+  );
 }
