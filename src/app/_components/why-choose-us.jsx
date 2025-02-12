@@ -13,6 +13,15 @@ import InfiniteBrand from "./Infinity-brand"
 export default function WhyChooseUs() {
   return (
     <section className="py-16 bg-[url(/logo-icon-bg.png)] bg-no-repeat bg-auto bg-center bg-[#87BD2B]/5">
+      <InfiniteBrand
+        brands={[
+          "/lupin.png",
+          "/jubilant-infra.png",
+          "/akums.webp",
+          "/nectar.png",
+        ]}
+        className="mt-5"
+      />
       <div className="container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Left Column with Images */}
@@ -209,15 +218,6 @@ export default function WhyChooseUs() {
           </motion.div>
         </div>
       </div>
-      <InfiniteBrand
-        brands={[
-          "/lupin.png",
-          "/jubilant-infra.png",
-          "/akums.webp",
-          "/nectar.png",
-        ]}
-        className="mt-5"
-      />
     </section>
   );
 }
