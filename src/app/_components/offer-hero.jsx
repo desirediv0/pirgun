@@ -2,16 +2,9 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Globe, ArrowRight, Map } from "lucide-react"
+import { Globe, Map } from "lucide-react"
 import { motion } from "framer-motion"
 
-
-const stats = [
-  { number: "10k+", label: "Complete Projects" },
-  { number: "20+", label: "Team Members" },
-  { number: "5k+", label: "Winning Awards" },
-  { number: "100+", label: "Happy Clients" },
-]
 
 export default function HeroSection() {
   return (
@@ -107,34 +100,6 @@ export default function HeroSection() {
 
             </motion.div>
 
-            {/* Stats Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-[#87BD2B] rounded-2xl p-8 md:h-1/4"
-            >
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <h3 className="text-3xl md:text-4xl font-bold text-white">
-                      {stat.number}
-                    </h3>
-                    <p className="text-white/90 text-sm mt-1">
-                      {stat.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>
