@@ -12,16 +12,16 @@ import WhyChooseUs from "./_components/why-choose-us";
 export default function Home() {
   return (
     <>
-    <Banner />
-    <WhyChooseUs />
-    <CountryCarousel/>
-    <VisaCategories/>
-    {/* <AvailableCountries /> */}
-    <OfferHero />
-   <CoachingCarousel />
-   <TeamSection />
-   <TestimonialSection />
-   <ProcessOverview />
+      <Banner />
+      <WhyChooseUs />
+      <CountryCarousel />
+      <VisaCategories />
+      {/* <AvailableCountries /> */}
+      <OfferHero />
+      <CoachingCarousel />
+      <TeamSection />
+      <TestimonialSection />
+      <ProcessOverview />
     </>
   );
 }
