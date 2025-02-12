@@ -129,7 +129,7 @@ export default function WhyChooseUs() {
                 className="rounded-3xl bg-none p-5  border border-[#87BD2B]/30"
               >
                 <div className="flex items-center gap-2">
-                  <div className="mb-4 inline-flex h-12 w-28 items-center justify-center rounded-xl bg-[#87BD2B]">
+                  <div className="mb-4 inline-flex h-12 w-16 items-center justify-center rounded-xl bg-[#87BD2B]">
                     <ClipboardList className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="mb-2 text-xl font-semibold text-[#004225]">
