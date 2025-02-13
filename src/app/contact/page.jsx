@@ -42,10 +42,11 @@ export default function Contact() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-              Let&apos;s Start a Conversation
+              Your Vision, Our Expertise
             </h1>
             <p className="text-gray-600 text-lg">
               Have questions or need assistance? We&apos;re here to help you create the perfect solution for your needs.
+
             </p>
           </motion.div>
 
@@ -93,7 +94,9 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="bg-white p-8 rounded-2xl shadow-lg"
             >
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                From Idea to Execution – Let&apos;s Make It Happen
+              </h2>
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -148,7 +151,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#87BD2B] to-[#57830d] text-white font-semibold hover:opacity-90 transition-all duration-300"
                 >
-                  Send Message
+                  Let&apos;s Start Your Project
                 </motion.button>
               </form>
             </motion.div>
@@ -160,18 +163,10 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="w-full h-[450px] mt-16"
+          className="w-full h-[450px] mt-16 rounded-t-md overflow-hidden"
         >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11266.520836990914!2d77.59379424259907!3d28.529137473155426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cec4d86e1b251%3A0x36b54c51bcd9ec71!2sVIET!5e0!3m2!1sen!2sin!4v1739276605785!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-none"
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.234350710512!2d77.04311527528746!3d28.592745575686497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1bd8f405bcf1%3A0x9e601372145832d0!2sDesire%20Div%20-%20Website%20Designing%20Company%20in%20Dwarka!5e0!3m2!1sen!2sin!4v1739439923688!5m2!1sen!2sin" width="
+         100%" height="100%" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </motion.div>
       </section>
     </>
