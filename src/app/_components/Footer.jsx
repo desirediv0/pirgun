@@ -1,8 +1,8 @@
-import { 
-  Send, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
+import {
+  Send,
+  Facebook,
+  Instagram,
+  Linkedin,
   Twitter,
   CheckCircle2,
   ChevronRight,
@@ -21,7 +21,7 @@ export default function Footer() {
         style={{
           backgroundImage: "url('/world.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: "",
         }}
       />
 
