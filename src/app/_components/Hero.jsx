@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function Hero({bgImage, Heading}) {
- 
+export default function Hero({ bgImage, Heading }) {
+
   return (
     <div className="relative w-full h-[250px] lg:h-[350px]">
       <Image
@@ -16,7 +16,7 @@ export default function Hero({bgImage, Heading}) {
 
       <div className="absolute inset-0 bg-green-800 bg-opacity-50"></div>
 
-      <div className="relative z-10 flex items-center justify-center h-full text-white text-4xl font-bold">
+      <div className="relative z-10 flex items-center justify-center h-full text-white text-6xl font-bold">
         {Heading}
       </div>
     </div>
