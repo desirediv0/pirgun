@@ -13,12 +13,7 @@ const contactInfo = [
     value: "info@pirgunair.com",
     color: "#87BD2B"
   },
-  {
-    icon: Phone,
-    title: "Phone Number",
-    value: "+91 98765 43210",
-    color: "#87BD2B"
-  },
+
   {
     icon: MapPin,
     title: "Office Location",
@@ -51,7 +46,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}

@@ -12,11 +12,11 @@ const menuItems = [
   { name: "About Us", icon: <BookUser />, href: "/about" },
   { name: "Services", icon: <CircleCheckBig />, href: "/service" },
   { name: "Industries Served", icon: <Factory />, href: "/service" },
-  { name: "Projects", icon: <FolderKanban />, href: "/service" },
-  { name: "Testimonials", icon: <Star />, href: "/service" },
+  // { name: "Projects", icon: <FolderKanban />, href: "/service" },
+  // { name: "Testimonials", icon: <Star />, href: "/service" },
   { name: "Contact", icon: <Contact />, href: "/contact" },
-  { name: "Careers", icon: <ChartColumnIncreasing />, href: "/contact" },
-  { name: "Company Profile", icon: <Building2 />, href: "/contact" },
+  // { name: "Careers", icon: <ChartColumnIncreasing />, href: "/contact" },
+  // { name: "Company Profile", icon: <Building2 />, href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -58,10 +58,10 @@ export default function Navbar() {
         </div>
 
         <motion.div className="p-4 border-t bg-white">
-          <div className="flex pt-2 pb-4">
+          {/* <div className="flex pt-2 pb-4">
             <Phone size={22} color="#465568" />
             <span className="ps-1 text-[#465568] text-md">+91 124 711 8233</span>
-          </div>
+          </div> */}
           <motion.button
             className="w-full bg-[#00488D] text-white py-2 px-4 rounded-lg text-md font-medium shadow-lg"
             whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
@@ -151,10 +151,10 @@ export default function Navbar() {
                 </div>
 
                 <div className="p-6 border-t bg-white">
-                  <div className="flex pt-2 pb-4">
+                  {/* <div className="flex pt-2 pb-4">
                     <Phone size={22} color="#465568" />
                     <span className="ps-1 text-[#465568] text-md">+91 124 711 8233</span>
-                  </div>
+                  </div> */}
                   <motion.button
                     className="w-full bg-[#00488D] text-white py-3 px-4 rounded-lg text-lg font-medium shadow-lg"
                     whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
