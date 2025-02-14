@@ -7,34 +7,46 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur,",
-    author: "Sarah Johnson",
+    quote:
+      "Pirgun provided us with a seamless end-to-end turnkey solution for our new pharmaceutical facility. Their deep technical knowledge and attention to compliance made the entire process smooth and hassle-free. From design to execution, everything was managed with precision. We couldn’t have asked for a better partner!",
+    author: "Amit Khanna ",
     role: "International Student",
     avatar: "/coaching-right-img.webp",
-    rating: 5
+    rating: 5,
   },
   {
-    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
-    author: "Michael Chen",
+    quote:
+      "We engaged Pirgun for project management consultancy, and they exceeded our expectations. Their structured approach, industry expertise, and problem-solving skills ensured our nutraceutical plant was completed on time and within budget. Their team was always available, proactive, and a pleasure to work with.",
+    author: " RAGHAV MITTAL",
     role: "Business Professional",
     avatar: "/coaching-right-img.webp",
-    rating: 5
+    rating: 5,
   },
   {
-    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
-    author: "Emma Thompson",
+    quote:
+      "Setting up a food processing unit requires strict hygiene and regulatory adherence, and Pirgun delivered flawlessly. Their design consultancy helped us create an efficient layout, and their end-to-end execution ensured smooth implementation. Their technical expertise truly sets them apart!",
+    author: "Rahul Mehta",
     role: "Healthcare Professional",
     avatar: "/coaching-right-img.webp",
-    rating: 5
+    rating: 5,
   },
   {
-    quote: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero minima placeat reiciendis optio corrupti molestiae ducimus dolorem, quos ipsa fugit ut nihil tenetur",
-    author: "David Rodriguez",
+    quote:
+      "Pirgun’s team demonstrated outstanding technical competence in setting up our advanced testing laboratory. They took care of everything—from equipment selection to seamless integration—ensuring compliance with all industry standards. The level of detail and professionalism they bring is exceptional!",
+    author: "Dr. Pooja Verma",
     role: "Software Engineer",
     avatar: "/coaching-right-img.webp",
-    rating: 5
+    rating: 5,
   },
-]
+  {
+    quote:
+      "We signed an AMC & maintenance contract with Pirgun for our medical device manufacturing unit, and it has been a game-changer. Their proactive maintenance approach ensures zero downtime, and their team is always just a call away. Working with Pirgun gives us confidence that our operations will run smoothly year after year.",
+    author: "Vikas Rathi ",
+    role: "Software Engineer",
+    avatar: "/coaching-right-img.webp",
+    rating: 5,
+  },
+];
 
 export function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -84,7 +96,7 @@ export function TestimonialSection() {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              <p className="text-2xl font-light leading-relaxed">
+              <p className="text-xl font-light leading-relaxed">
                 {testimonials[currentIndex].quote}
               </p>
 
