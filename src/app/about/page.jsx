@@ -1,6 +1,16 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import Hero from "../_components/Hero";
+import { motion } from "framer-motion";
+import InfiniteBrand from "../_components/Infinity-brand";
+
+const stats = [
+  { number: "10k+", label: "Complete Projects" },
+  { number: "20+", label: "Team Members" },
+  { number: "5k+", label: "Winning Awards" },
+  { number: "100+", label: "Happy Clients" },
+];
 
 const AboutPage = () => {
   return (
@@ -9,9 +19,9 @@ const AboutPage = () => {
       <Hero bgImage={"breadcrumb.png"} Heading={"About Us"} />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 max-w-7xl">
+      <div className="container mx-auto px-4 pt-16 max-w-7xl">
         {/* Company Introduction */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 ">
           {/* Left Column - Images */}
           <div className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
@@ -67,6 +77,37 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+       
+
+        {/* Stats Section */}
+        <div className=" mx-auto md:w-[80%] w-full py-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="bg-[#87BD2B] rounded-2xl p-8"
+          >
+            <div className="grid grid-cols-4 gap-6">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                    {stat.number}
+                  </h3>
+                  <p className="text-white/90 text-sm mt-1">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      
 
         {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -118,6 +159,8 @@ const AboutPage = () => {
           </div>
         </div>
 
+        {/*  */}
+
         {/* 2nd */}
         <div className="grid md:grid-cols-2 mb-16">
           <div className="">
@@ -143,6 +186,17 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+        <InfiniteBrand
+          brands={[
+            "/lupin.png",
+            "/jubilant-infra.png",
+            "/akums.webp",
+            "/nectar.png",
+          ]}
+          className="mt-5"
+        />
+
+          
 
         {/* USPs */}
         <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -164,10 +218,9 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
-        </div>
-
+        </div> 
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 mb-16">
           <p className="text-xl text-gray-700 font-semibold">
             At Pirgun Air Systems, we don&apos;t just execute projects—we build
             smart, efficient, and financially viable solutions that empower
