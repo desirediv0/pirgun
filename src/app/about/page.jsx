@@ -59,7 +59,7 @@ const AboutPage = () => {
               <span className="text-[#89bb25]">Air Systems</span>
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
-              At Pirgun Air Systems, we're not just engineers – we're
+              At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
               innovators, problem-solvers, and visionaries. Our mission is to
               revolutionize air systems with cutting-edge technology and
               unparalleled expertise.
@@ -267,7 +267,7 @@ const AboutPage = () => {
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             Join hands with Pirgun Air Systems and experience the future of air
-            management. Let's create sustainable, efficient, and innovative
+            management. Let&apos;s create sustainable, efficient, and innovative
             solutions together.
           </p>
           <Button
