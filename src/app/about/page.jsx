@@ -1,9 +1,9 @@
-"use client"
-import React from "react";
+"use client";
 import Image from "next/image";
-import Hero from "../_components/Hero";
 import { motion } from "framer-motion";
-import InfiniteBrand from "../_components/Infinity-brand";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Hero from "../_components/Hero";
 
 const stats = [
   { number: "10k+", label: "Complete Projects" },
@@ -14,222 +14,269 @@ const stats = [
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <Hero bgImage={"breadcrumb.png"} Heading={"About Us"} />
-
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="relative h-[50vh] flex items-center justify-center text-white overflow-hidden"
+      >
+        <Image
+          src="/hero-background.jpg"
+          alt="Hero background"
+          layout="fill"
+          objectFit="cover"
+          className="absolute z-0"
+        />
+        <Hero bgImage="breadcrumb.png" Heading="About Us" />
+        {/* <motion.h1
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl md:text-7xl font-bold z-20 text-center"
+        >
+          About <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+            Us
+          </span>
+        </motion.h1>
+      </motion.div> */}
+      </motion.div>
       {/* Main Content */}
-      <div className="container mx-auto px-4 pt-16 max-w-7xl">
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Company Introduction */}
-        <div className="grid lg:grid-cols-2 gap-8 ">
-          {/* Left Column - Images */}
-          <div className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div>
-                <Image
-                  src="/img1.png"
-                  alt="Company Image 1"
-                  width={400}
-                  height={500}
-                  className="rounded-xl w-full h-auto object-cover"
-                />
-              </div>
-              <div className="space-y-4">
-                <div className="bg-[#83CD20] rounded-xl p-6 text-white">
-                  <div className="flex items-center">
-                    <span className="text-5xl font-bold">25</span>
-                    <div className="ml-4">
-                      <p className="font-semibold">Years Of</p>
-                      <p className="font-semibold">Experience</p>
-                    </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid lg:grid-cols-2 gap-12 mb-24"
+        >
+          {/* Left Column - Text */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-[#00498b] leading-tight">
+              Pioneering Excellence in{" "}
+              <span className="text-[#89bb25]">Air Systems</span>
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              At Pirgun Air Systems, we're not just engineers – we're
+              innovators, problem-solvers, and visionaries. Our mission is to
+              revolutionize air systems with cutting-edge technology and
+              unparalleled expertise.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              From concept to execution, we deliver smart, efficient, and
+              sustainable solutions that propel industries forward. Our
+              commitment to quality and innovation ensures that every project we
+              undertake sets new benchmarks in the field.
+            </p>
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:from-[#89bb25] hover:to-[#00498b] transition-all duration-300"
+            >
+              Discover Our Approach <ArrowRight className="ml-2" />
+            </Button>
+          </div>
+
+          {/* Right Column - Images */}
+          <div className="grid grid-cols-2 gap-4">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="rounded-2xl overflow-hidden shadow-lg"
+            >
+              <Image
+                src="/img2.png"
+                alt="Engineering Excellence"
+                width={400}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+            <div className="space-y-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                className="bg-gradient-to-br from-[#89bb25] to-[#afd365] rounded-2xl p-6 text-white shadow-lg"
+              >
+                <div className="flex items-center">
+                  <span className="text-5xl font-bold">25</span>
+                  <div className="ml-4">
+                    <p className="font-semibold">Years Of</p>
+                    <p className="font-semibold">Innovation</p>
                   </div>
                 </div>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+                className="rounded-2xl overflow-hidden shadow-lg"
+              >
                 <Image
-                  src="/img2.png"
-                  alt="Company Image 2"
+                  src="/img1.png"
+                  alt="Innovative Solutions"
                   width={400}
                   height={300}
-                  className="rounded-xl w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
-
-          {/* Right Column - Text */}
-          <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-blue-950">
-              Our key strength lies in offering a clear vision at the right
-              value
-            </h2>
-            <p className="text-gray-700 leading-relaxed">
-              At Pirgun Air Systems, we specialize in delivering smart,
-              cost-effective, and technically superior solutions for industries
-              that demand precision and efficiency. From design consultancy and
-              project management to turnkey execution and maintenance services,
-              we provide end-to-end solutions that help businesses optimize
-              their operations while maintaining compliance and quality.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              We bring expertise that economizes cost without compromising
-              quality. Whether setting up a new facility, upgrading existing
-              infrastructure, or ensuring smooth operations, we strategically
-              align projects with budgets to maximize efficiency.
-            </p>
-          </div>
-        </div>
-       
+        </motion.div>
 
         {/* Stats Section */}
-        <div className=" mx-auto md:w-[80%] w-full py-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="bg-[#87BD2B] rounded-2xl p-8"
-          >
-            <div className="grid grid-cols-4 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-24"
+        >
+          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                  <h3 className="text-4xl md:text-5xl font-bold text-[#89bb25]">
                     {stat.number}
                   </h3>
-                  <p className="text-white/90 text-sm mt-1">{stat.label}</p>
+                  <p className="text-gray-600 text-sm mt-2">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-        </div>
-      
+          </div>
+        </motion.div>
 
         {/* Vision & Mission */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            <h3 className="text-2xl font-bold text-blue-950 mb-4">
-              Our Mission
-            </h3>
-            <ul className="space-y-3 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-[#83CD20] mr-2">•</span>
-                Deliver Value-Driven Solutions
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#83CD20] mr-2">•</span>
-                Support Financial Planning
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#83CD20] mr-2">•</span>
-                Innovate with Expertise
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#83CD20] mr-2">•</span>
-                Ensure Compliance & Efficiency
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#83CD20] mr-2">•</span>
-                Build Strong Partnerships
-              </li>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="grid md:grid-cols-2 gap-12 mb-24"
+        >
+          <div className="bg-gradient-to-br from-[#89bb25] to-[#00498b] p-8 rounded-3xl shadow-xl text-white">
+            <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
+            <ul className="space-y-4">
+              {[
+                "Deliver Value-Driven Solutions",
+                "Support Financial Planning",
+                "Innovate with Expertise",
+                "Ensure Compliance & Efficiency",
+                "Build Strong Partnerships",
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-start"
+                >
+                  <CheckCircle className="mr-3 h-6 w-6 flex-shrink-0" />
+                  <span>{item}</span>
+                </motion.li>
+              ))}
             </ul>
           </div>
-
-          <div className="">
-            {/* bg-white p-8 rounded-xl shadow-lg*/}
-            <Image
-              src="/contact-tap-img.png"
-              width={500}
-              height={500}
-              alt="about"
-              className="object-cover rounded-2xl"
-            />
-            {/* <h3 className="text-2xl font-bold text-blue-950 mb-4">
+          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-8 rounded-3xl shadow-xl">
+            <h3 className="text-3xl font-bold text-[#00498b] mb-6">
               Our Vision
             </h3>
-            <p className="text-gray-700">
-              To be the first and only EPC company in North India exclusively
-              specializing in the pharmaceutical industry, setting new
-              benchmarks in precision, compliance, and execution.
-            </p> */}
-          </div>
-        </div>
-
-        {/*  */}
-
-        {/* 2nd */}
-        <div className="grid md:grid-cols-2 mb-16">
-          <div className="">
-            <Image
-              src="/contact-tap-img.png"
-              width={500}
-              height={500}
-              alt="about"
-              className="object-cover rounded-2xl"
-            />
-          </div>
-
-          <div className="bg-white p-8 rounded-xl shadow-lg">
-            {/* bg-white p-8 rounded-xl shadow-lg*/}
-
-            <h3 className="text-2xl font-bold text-blue-950 mb-4">
-              Our Vision
-            </h3>
-            <p className="text-gray-700">
-              To be the first and only EPC company in North India exclusively
-              specializing in the pharmaceutical industry, setting new
-              benchmarks in precision, compliance, and execution.
+            <p className="text-gray-700 text-lg leading-relaxed">
+              To be the catalyst for transformation in the air systems industry,
+              setting new standards in innovation, sustainability, and client
+              satisfaction. We envision a future where our solutions not only
+              meet the needs of today but anticipate the challenges of tomorrow,
+              creating environments that inspire productivity and well-being.
             </p>
+            {/* <Image
+              src="/clean-room.jpeg"
+              width={300}
+              height={300}
+              alt="Our Vision"
+              className="mt-6 mx-auto"
+            /> */}
           </div>
-        </div>
-        <InfiniteBrand
-          brands={[
-            "/lupin.png",
-            "/jubilant-infra.png",
-            "/akums.webp",
-            "/nectar.png",
-          ]}
-          className="mt-5"
-        />
-
-          
+        </motion.div>
 
         {/* USPs */}
-        <div className="bg-white p-8 rounded-xl shadow-lg">
-          <h3 className="text-2xl font-bold text-blue-950 mb-6">
-            Our Unique Selling Points (USPs)
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-24"
+        >
+          <h3 className="text-3xl font-bold text-center text-[#00498b] mb-12">
+            Why Choose Pirgun Air Systems?
           </h3>
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              "First Pharma-Specialized EPC in North India",
-              "Vision at the Right Value",
-              "End-to-End Financial & Project Support",
-              "Seamless Turnkey Execution",
-              "Regulatory Expertise & Compliance",
-              "Long-Term Reliability & Maintenance",
+              {
+                title: "Industry Pioneers",
+                description: "First Pharma-Specialized EPC in North India",
+              },
+              {
+                title: "Value-Driven Approach",
+                description: "Optimal solutions at the right price point",
+              },
+              {
+                title: "End-to-End Support",
+                description: "Comprehensive project and financial assistance",
+              },
+              {
+                title: "Seamless Execution",
+                description: "Efficient turnkey project implementation",
+              },
+              {
+                title: "Regulatory Expertise",
+                description: "Ensuring compliance at every step",
+              },
+              {
+                title: "Long-Term Reliability",
+                description: "Ongoing maintenance and support services",
+              },
             ].map((usp, index) => (
-              <div key={index} className="flex items-start">
-                <span className="text-[#83CD20] mr-2 text-xl">✓</span>
-                <p className="text-gray-700">{usp}</p>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <h4 className="text-xl font-semibold text-[#739827] mb-2">
+                  {usp.title}
+                </h4>
+                <p className="text-gray-600">{usp.description}</p>
+              </motion.div>
             ))}
           </div>
-        </div> 
+        </motion.div>
+
         {/* Call to Action */}
-        <div className="text-center mt-16 mb-16">
-          <p className="text-xl text-gray-700 font-semibold">
-            At Pirgun Air Systems, we don&apos;t just execute projects—we build
-            smart, efficient, and financially viable solutions that empower
-            businesses for long-term success.
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-[#00498b] mb-6">
+            Ready to Revolutionize Your Air Systems?
+          </h2>
+          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            Join hands with Pirgun Air Systems and experience the future of air
+            management. Let's create sustainable, efficient, and innovative
+            solutions together.
           </p>
-          <p className="text-2xl font-bold text-blue-950 mt-4">
-            Let&apos;s create something exceptional together! 🚀
-          </p>
-        </div>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:from-[#89bb25] hover:to-[#00498b] transition-all duration-300"
+          >
+            Start Your Journey <ArrowRight className="ml-2" />
+          </Button>
+        </motion.div>
       </div>
     </div>
   );
