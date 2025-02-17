@@ -1,9 +1,18 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Hero from "../_components/Hero";
+import {
+  Award,
+  TrendingUp,
+  LifeBuoy,
+  Workflow,
+  ShieldCheck,
+  Wrench,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react";
 
 const stats = [
   { number: "10k+", label: "Complete Projects" },
@@ -12,37 +21,44 @@ const stats = [
   { number: "100+", label: "Happy Clients" },
 ];
 
+const usps = [
+  {
+    title: "Industry Pioneers",
+    description: "First Pharma-Specialized EPC in North India",
+    icon: Award
+  },
+  {
+    title: "Value-Driven Approach",
+    description: "Optimal solutions at the right price point",
+    icon: TrendingUp
+  },
+  {
+    title: "End-to-End Support",
+    description: "Comprehensive project and financial assistance",
+    icon: LifeBuoy
+  },
+  {
+    title: "Seamless Execution",
+    description: "Efficient turnkey project implementation",
+    icon: Workflow
+  },
+  {
+    title: "Regulatory Expertise",
+    description: "Ensuring compliance at every step",
+    icon: ShieldCheck
+  },
+  {
+    title: "Long-Term Reliability",
+    description: "Ongoing maintenance and support services",
+    icon: Wrench
+  },
+];
+
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="relative h-[50vh] flex items-center justify-center text-white overflow-hidden"
-      >
-        <Image
-          src="/hero-background.jpg"
-          alt="Hero background"
-          layout="fill"
-          objectFit="cover"
-          className="absolute z-0"
-        />
-        <Hero bgImage="breadcrumb.png" Heading="About Us" />
-        {/* <motion.h1
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold z-20 text-center"
-        >
-          About <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-            Us
-          </span>
-        </motion.h1>
-      </motion.div> */}
-      </motion.div>
+      <Hero bgImage="breadcrumb.png" Heading="About Us" />
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Company Introduction */}
@@ -100,7 +116,7 @@ const AboutPage = () => {
                 className="bg-gradient-to-br from-[#89bb25] to-[#afd365] rounded-2xl p-6 text-white shadow-lg"
               >
                 <div className="flex items-center">
-                  <span className="text-5xl font-bold">25</span>
+                  <span className="text-5xl font-bold">25 +</span>
                   <div className="ml-4">
                     <p className="font-semibold">Years Of</p>
                     <p className="font-semibold">Innovation</p>
@@ -131,7 +147,7 @@ const AboutPage = () => {
           transition={{ duration: 0.5 }}
           className="mb-24"
         >
-          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-xl">
+          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-3xl p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
@@ -213,43 +229,23 @@ const AboutPage = () => {
             Why Choose Pirgun Air Systems?
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Industry Pioneers",
-                description: "First Pharma-Specialized EPC in North India",
-              },
-              {
-                title: "Value-Driven Approach",
-                description: "Optimal solutions at the right price point",
-              },
-              {
-                title: "End-to-End Support",
-                description: "Comprehensive project and financial assistance",
-              },
-              {
-                title: "Seamless Execution",
-                description: "Efficient turnkey project implementation",
-              },
-              {
-                title: "Regulatory Expertise",
-                description: "Ensuring compliance at every step",
-              },
-              {
-                title: "Long-Term Reliability",
-                description: "Ongoing maintenance and support services",
-              },
-            ].map((usp, index) => (
+            {usps.map((usp, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <h4 className="text-xl font-semibold text-[#739827] mb-2">
-                  {usp.title}
-                </h4>
-                <p className="text-gray-600">{usp.description}</p>
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 rounded-lg bg-[#739827]/10 group-hover:bg-[#739827]/20 transition-colors">
+                    <usp.icon className="w-6 h-6 text-[#739827]" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-[#739827]">
+                    {usp.title}
+                  </h4>
+                </div>
+                <p className="text-gray-600 pl-14">{usp.description}</p>
               </motion.div>
             ))}
           </div>
