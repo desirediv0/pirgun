@@ -77,7 +77,7 @@ const AboutPage = () => {
             <p className="text-gray-700 leading-relaxed text-lg">
               At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
               innovators, problem-solvers, and visionaries. Our mission is to
-              revolutionize air systems with cutting-edge technology and
+              revolutionize project execution & project technologies with cutting-edge technology and
               unparalleled expertise.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
@@ -259,7 +259,7 @@ const AboutPage = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#00498b] mb-6">
-            Ready to Revolutionize Your Air Systems?
+            Ready to Revolutionize Your Project Management?
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             Join hands with Pirgun Air Systems and experience the future of air

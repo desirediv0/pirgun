@@ -9,44 +9,36 @@ import Image from "next/image"
 const testimonials = [
   {
     quote:
-      "Pirgun provided us with a seamless end-to-end turnkey solution for our new pharmaceutical facility. Their deep technical knowledge and attention to compliance made the entire process smooth and hassle-free. From design to execution, everything was managed with precision. We couldn’t have asked for a better partner!",
-    author: "Amit Khanna ",
+      "Pirgun Air Systems has been our one-stop solution for every project challenge. Their expertise and innovation helped us achieve a specialized technology at a minimal cost. With a structured approach and commitment, they ensure seamless execution. Simply pay on time, and they deliver excellence. Highly recommended for Turnkey Clean Room solutions.",
+    author: "Mr. Kapil Mittal, CSO, Power Gummies",
+    icon: "",
+    avatar: "/testimonial1.png",
+    rating: 5,
+  },
+  {
+    quote:
+      "Pirgun Air Systems has been our trusted partner for multiple projects, delivering excellence every time. With their expertise, structured approach, and commitment, they have successfully completed five projects for us and continue to be our go-to choice. A truly reliable partner—we highly recommend them for Turnkey Clean Room solutions.",
+    author: "Ishwar Sharan, IVD Consultant",
+    icon: "",
+    avatar: "/testimonial2.png",
+    rating: 5,
+  },
+  {
+    quote:
+      "As a non-technical person, managing this project seemed overwhelming, but Pirgun Air Systems made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution. During the drug audit, officials praised our plant as the best in North India. Truly a game-changer—highly recommended!",
+    author: "Dharamveer, Director, HHA Healthcare",
     icon: "",
     avatar: "/coaching-right-img.webp",
     rating: 5,
   },
   {
     quote:
-      "We engaged Pirgun for project management consultancy, and they exceeded our expectations. Their structured approach, industry expertise, and problem-solving skills ensured our nutraceutical plant was completed on time and within budget. Their team was always available, proactive, and a pleasure to work with.",
-    author: " RAGHAV MITTAL",
+      "Being a CA, I had no technical knowledge about setting up a tofu manufacturing unit. Without Pirgun Air Systems, the project could have gone wrong. They guided us at every step, aligned everything as per expert standards, and ensured seamless execution. Now, we proudly have North India’s first-of-its-kind tofu factory!",
+    author: "Mr. Mohit Khanna, Director, Jiwanmitra Foods",
     icon: "",
-    avatar: "/coaching-right-img.webp",
+    avatar: "/testimonial4.png",
     rating: 5,
-  },
-  {
-    quote:
-      "Setting up a food processing unit requires strict hygiene and regulatory adherence, and Pirgun delivered flawlessly. Their design consultancy helped us create an efficient layout, and their end-to-end execution ensured smooth implementation. Their technical expertise truly sets them apart!",
-    author: "Rahul Mehta",
-    icon: "",
-    avatar: "/coaching-right-img.webp",
-    rating: 5,
-  },
-  {
-    quote:
-      "Pirgun’s team demonstrated outstanding technical competence in setting up our advanced testing laboratory. They took care of everything—from equipment selection to seamless integration—ensuring compliance with all industry standards. The level of detail and professionalism they bring is exceptional!",
-    author: "Dr. Pooja Verma",
-    icon: "",
-    avatar: "/coaching-right-img.webp",
-    rating: 5,
-  },
-  {
-    quote:
-      "We signed an AMC & maintenance contract with Pirgun for our medical device manufacturing unit, and it has been a game-changer. Their proactive maintenance approach ensures zero downtime, and their team is always just a call away. Working with Pirgun gives us confidence that our operations will run smoothly year after year.",
-    author: "Vikas Rathi ",
-    icon: "",
-    avatar: "/coaching-right-img.webp",
-    rating: 5,
-  },
+  }
 ];
 
 export function TestimonialSection() {
@@ -77,7 +69,7 @@ export function TestimonialSection() {
           className="relative aspect-square rounded-2xl overflow-hidden"
         >
           <Image
-            src="/img2.png"
+            src="/testimonial.png"
             alt="Happy clients"
             fill
             className="object-cover"

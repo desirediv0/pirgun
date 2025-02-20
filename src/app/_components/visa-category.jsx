@@ -10,14 +10,14 @@ const visaTypes = [
     title: "Pharmaceuticals & Nutraceuticals",
     description:
       "  - Ensuring compliance, precision, and high-quality solutions for drug manufacturing, supplements, and wellness products. ",
-    image: "/hvac.jpeg",
+    image: "/pharmaceuticals.png",
     icon: ShieldCheck,
   },
   {
     title: "Food & Beverages",
     description:
       "   - Providing innovative, hygienic, and regulatory-compliant solutions for safe food processing and packaging.",
-    image: "/clean-room.jpeg",
+    image: "/food.png",
     icon: MapPinHouse,
   },
   {
@@ -25,14 +25,14 @@ const visaTypes = [
     description:
       " - Enhancing product quality, aesthetics, and brand value with premium solutions for the beauty and personal care industry. ",
     icon: GraduationCap,
-    image: "/project-consultancy.jpeg",
+    image: "/cosmetics.png",
   },
   {
     title: "Medical, Labs & Surgical",
     description:
       " - Supporting laboratories, diagnostics, and medical devices with cutting-edge solutions to ensure accuracy, safety, and efficiency ",
     icon: Binoculars,
-    image: "/project-consultancy.jpeg",
+    image: "/medical.png",
   },
 ];
 
@@ -43,13 +43,13 @@ export default function VisaCategories() {
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-bold text-[#004225]">
-            Indutriees we serve:
+            Industries we serve:
             <br />
           </h2>
-          <span className="mb-2 inline-block text-xs font-semibold text-[#87BD2B] uppercase">
+          {/* <span className="mb-2 inline-block text-xs font-semibold text-[#87BD2B] uppercase">
             Here’s a refined version of the &quot;Industries We Serve&quot; section,
             clubbing the industries into four broader categories:
-          </span>
+          </span> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

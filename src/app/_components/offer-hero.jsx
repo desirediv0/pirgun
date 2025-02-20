@@ -37,7 +37,7 @@ export default function HeroSection() {
           >
             <div className="relative h-full min-h-[500px] overflow-hidden">
               <Image
-                src="/img1.png"
+                src="/img5.png"
                 alt="Travel essentials"
                 fill
                 className="object-contain"

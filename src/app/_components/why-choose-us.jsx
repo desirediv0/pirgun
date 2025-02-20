@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           <div className="relative grid lg:grid-cols-2 gap-2">
             <div className="flex flex-col h-full items-center justify-evenly gap-3">
               <Image
-                src="/img1.png"
+                src="/img3.png"
                 alt="left"
                 width={250}
                 height={250}
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
                 </span>
               </div>
               <Image
-                src="/img2.png"
+                src="/img4.png"
                 alt="left"
                 width={800}
                 height={800}
@@ -75,9 +75,7 @@ export default function WhyChooseUs() {
             </h2>
 
             <p className="mb-8 text-gray-600 text-sm">
-              At Prigun Air Systems, we don’t just control air—we engineer
-              environments that redefine safety, efficiency, and compliance for
-              critical industries.
+            Built on the pillars of expertise, innovation, and trust, Pirgun Air Systems aims to be a guiding force for businesses, helping them navigate complexities, optimize operations, and achieve sustainable growth.
             </p>
 
             <div className="mb-8 grid gap-6 md:grid-cols-2">
