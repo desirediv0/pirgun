@@ -66,7 +66,7 @@ const fadeInUp = {
 export default function Service() {
   return (
     <>
-      <Hero bgImage="breadcrumb.png" Heading="Our Services" />
+      <Hero bgImage="medical-laboratory.jpg" Heading="Our Services" />
 
       {/* Intro Section */}
       <motion.section

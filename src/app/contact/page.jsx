@@ -25,7 +25,7 @@ const contactInfo = [
 export default function Contact() {
   return (
     <>
-      <Hero bgImage="breadcrumb.png" Heading="Contact Us" />
+      <Hero bgImage="industrial-park-factory-building-warehouse (1).jpg" Heading="Contact Us" />
 
       <section className="bg-gradient-to-b from-white to-gray-50">
         {/* Main Contact Section */}
@@ -81,10 +81,11 @@ export default function Contact() {
               className="relative"
             >
               <Image
-                src="/contact-left-img.png"
+                src="/contact.jpeg"
                 width={600}
                 height={600}
                 alt="Contact Us"
+                className="rounded-md h-[550px]  object-cover"
               />
             </motion.div>
 

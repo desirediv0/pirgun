@@ -59,7 +59,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <Hero bgImage="breadcrumb.png" Heading="About Us" />
+      <Hero bgImage="aboutus.jpg" Heading="About Us" />
       {/* Main Content */}
       <div className="container mx-auto  py-16 max-w-7xl">
         {/* Company Introduction */}
