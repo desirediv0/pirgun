@@ -19,11 +19,11 @@ const slides = [
 ]
 
 const stats = [
-  { number: "10k+", label: "Complete Projects" },
-  { number: "20+", label: "Team Members" },
-  { number: "5k+", label: "Winning Awards" },
-  { number: "100+", label: "Happy Clients" },
-]
+  { number: "100+", label: "Complete Projects" },
+  { number: "50+", label: "Team Members" },
+  { number: "200+", label: " Cities Serving Capabilities  " },
+  { number: "99%", label: "Happy Customers" },
+];
 
 export default function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0)

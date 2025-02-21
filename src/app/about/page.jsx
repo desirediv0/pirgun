@@ -13,13 +13,14 @@ import {
   ArrowRight,
   CheckCircle
 } from "lucide-react";
+import WhyChooseUs from "../_components/why-choose-us";
 
-const stats = [
-  { number: "10k+", label: "Complete Projects" },
-  { number: "20+", label: "Team Members" },
-  { number: "5k+", label: "Winning Awards" },
-  { number: "100+", label: "Happy Clients" },
-];
+// const stats = [
+//   { number: "10k+", label: "Complete Projects" },
+//   { number: "20+", label: "Team Members" },
+//   { number: "5k+", label: "Winning Awards" },
+//   { number: "100+", label: "Happy Clients" },
+// ];
 
 const usps = [
   {
@@ -60,13 +61,13 @@ const AboutPage = () => {
       {/* Hero Section */}
       <Hero bgImage="breadcrumb.png" Heading="About Us" />
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 max-w-7xl">
+      <div className="container mx-auto  py-16 max-w-7xl">
         {/* Company Introduction */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid lg:grid-cols-2 gap-12 mb-24"
+          className="grid lg:grid-cols-2 gap-12 mb-24 px-4"
         >
           {/* Left Column - Text */}
           <div className="space-y-6">
@@ -77,8 +78,8 @@ const AboutPage = () => {
             <p className="text-gray-700 leading-relaxed text-lg">
               At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
               innovators, problem-solvers, and visionaries. Our mission is to
-              revolutionize project execution & project technologies with cutting-edge technology and
-              unparalleled expertise.
+              revolutionize project execution & project technologies with
+              cutting-edge technology and unparalleled expertise.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
               From concept to execution, we deliver smart, efficient, and
@@ -140,8 +141,10 @@ const AboutPage = () => {
           </div>
         </motion.div>
 
+        <WhyChooseUs />
+
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -165,14 +168,14 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Vision & Mission */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 gap-12 mb-24"
+          className="grid md:grid-cols-2 gap-12 mb-24 px-4"
         >
           <div className="bg-gradient-to-br from-[#89bb25] to-[#00498b] p-8 rounded-3xl shadow-xl text-white">
             <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
@@ -223,7 +226,7 @@ const AboutPage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-24"
+          className="mb-24 px-4"
         >
           <h3 className="text-3xl font-bold text-center text-[#00498b] mb-12">
             Why Choose Pirgun Air Systems?
@@ -256,7 +259,7 @@ const AboutPage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-4"
         >
           <h2 className="text-4xl font-bold text-[#00498b] mb-6">
             Ready to Revolutionize Your Project Management?
