@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
                 alt="right"
                 width={200}
                 height={200}
-                className="animate-spin"
+                className="rotate"
               />
             </div>
             <div className="flex flex-col h-full items-center justify-evenly w-full md:p-5 gap-3">
@@ -75,7 +75,10 @@ export default function WhyChooseUs() {
             </h2>
 
             <p className="mb-8 text-gray-600 text-sm">
-            Built on the pillars of expertise, innovation, and trust, Pirgun Air Systems aims to be a guiding force for businesses, helping them navigate complexities, optimize operations, and achieve sustainable growth.
+              Built on the pillars of expertise, innovation, and trust, Pirgun
+              Air Systems aims to be a guiding force for businesses, helping
+              them navigate complexities, optimize operations, and achieve
+              sustainable growth.
             </p>
 
             <div className="mb-8 grid gap-6 md:grid-cols-2">
