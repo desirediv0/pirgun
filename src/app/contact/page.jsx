@@ -11,16 +11,16 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Address",
-    value: "info@pirgunair.com",
-    color: "#87BD2B"
+    value: "info@pirgunairsystems.com ",
+    color: "#87BD2B",
   },
 
   {
     icon: MapPin,
     title: "Office Location",
     value: "Dwarka, New Delhi, India",
-    color: "#87BD2B"
-  }
+    color: "#87BD2B",
+  },
 ];
 
 

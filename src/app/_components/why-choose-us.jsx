@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
                 className="rounded-xl"
               />
               <Image
-                src="/choose-us-circle-img.webp"
+                src="/logo-icon.png"
                 alt="right"
                 width={200}
                 height={200}
