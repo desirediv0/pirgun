@@ -2,12 +2,10 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import {  Phone, 
-    ArrowRight, 
-    Check, 
-    FileText, 
-    Globe,
-    ClipboardList } from "lucide-react"
+import {
+  Globe,
+  ClipboardList
+} from "lucide-react"
 import InfiniteBrand from "./Infinity-brand"
 
 export default function WhyChooseUs() {
@@ -16,7 +14,7 @@ export default function WhyChooseUs() {
       <InfiniteBrand
         brands={[
           "/lupin.png",
-          "/jubilant-infra.png",
+
           "/akums.webp",
           "/nectar.png",
         ]}
