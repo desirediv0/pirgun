@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from "lucide-react"
+
+import { Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from "lucide-react"
 
 const visaTypes = [
   {
@@ -17,7 +17,7 @@ const visaTypes = [
     title: "Food & Beverages",
     description:
       "   - Providing innovative, hygienic, and regulatory-compliant solutions for safe food processing and packaging.",
-    image: "/food.png",
+    image: "/food.jpeg",
     icon: MapPinHouse,
   },
   {
@@ -25,7 +25,7 @@ const visaTypes = [
     description:
       " - Enhancing product quality, aesthetics, and brand value with premium solutions for the beauty and personal care industry. ",
     icon: GraduationCap,
-    image: "/cosmetics.png",
+    image: "/cosmo.jpeg",
   },
   {
     title: "Medical, Labs & Surgical",
