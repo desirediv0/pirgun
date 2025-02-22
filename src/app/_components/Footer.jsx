@@ -26,7 +26,7 @@ export default function Footer() {
       />
 
       {/* Top Support Section */}
-      <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 border-b border-white/10">
+      {/* <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 border-b border-white/10">
         <div className="flex items-center gap-4">
           <div className="bg-[#7AB641] rounded-full p-4">
             <Camera className="w-10 h-10 text-white" />
@@ -43,7 +43,7 @@ export default function Footer() {
             Are You Ready For Get?
           </h3>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">

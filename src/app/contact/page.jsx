@@ -64,50 +64,7 @@ export default function Contact() {
 
       <section className="bg-gradient-to-b from-white to-gray-50">
         {/* Main Contact Section */}
-        <div className="container mx-auto px-4 py-16">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-              Let&apos;s Connect Us
-            </h1>
-            <p className="text-gray-600 text-lg">
-              Have questions or need assistance? We&apos;re here to help you
-              create the perfect solution for your needs.
-            </p>
-          </motion.div>
-
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto`}
-                  style={{ backgroundColor: `${info.color}15` }}
-                >
-                  <info.icon
-                    className="w-6 h-6"
-                    style={{ color: info.color }}
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
-                  {info.title}
-                </h3>
-                <p className="text-gray-600 text-center">{info.value}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 items-center px-4 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center px-4 py-16">
             {/* Left Column */}
             <motion.div
               className="flex items-center gap-4"
@@ -149,108 +106,153 @@ export default function Contact() {
               </p>
             </motion.div>
           </div>
+        <div className="container mx-auto px-4 py-10">
+
+          {/* <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+              Let&apos;s Connect Us
+            </h1>
+            <p className="text-gray-600 text-lg">
+              Have questions or need assistance? We&apos;re here to help you
+              create the perfect solution for your needs.
+            </p>
+          </motion.div> */}
+
+          {/* Contact Cards */}
+          <div className="grid md:grid-cols-2 gap-8 ">
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div
+                  className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto`}
+                  style={{ backgroundColor: `${info.color}15` }}
+                >
+                  <info.icon
+                    className="w-6 h-6"
+                    style={{ color: info.color }}
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">
+                  {info.title}
+                </h3>
+                <p className="text-gray-600 text-center">{info.value}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Contact Form Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center  px-4">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <Image
-              src="/contact.jpeg"
-              width={600}
-              height={600}
-              alt="Contact Us"
-              className="rounded-md h-[550px]  object-cover"
-            />
-          </motion.div>
+        <div className="py-16 ">
+          <div className="grid lg:grid-cols-2 gap-12 items-center  px-4">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="relative"
+            >
+              <Image
+                src="/contact.jpeg"
+                width={600}
+                height={600}
+                alt="Contact Us"
+                className="rounded-md h-[550px]  object-cover"
+              />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-2xl shadow-lg"
-          >
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              Reach Out to Us Today!
-            </h2>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                Reach Out to Us Today!
+              </h2>
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-gray-700 mb-2">Name</label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
+                        placeholder="Your name"
+                      />
+                      <User
+                        className="absolute right-3 top-3 text-gray-400"
+                        size={20}
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-gray-700 mb-2">Email</label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
+                        placeholder="Your email"
+                      />
+                      <Mail
+                        className="absolute right-3 top-3 text-gray-400"
+                        size={20}
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <div>
-                  <label className="block text-gray-700 mb-2">Name</label>
+                  <label className="block text-gray-700 mb-2">Company</label>
                   <div className="relative">
                     <input
                       type="text"
                       className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                      placeholder="Your name"
+                      placeholder="Your company name"
                     />
-                    <User
+                    <Building
                       className="absolute right-3 top-3 text-gray-400"
                       size={20}
                     />
                   </div>
                 </div>
+
                 <div>
-                  <label className="block text-gray-700 mb-2">Email</label>
+                  <label className="block text-gray-700 mb-2">Message</label>
                   <div className="relative">
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                      placeholder="Your email"
+                    <textarea
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all min-h-[120px]"
+                      placeholder="Your message"
                     />
-                    <Mail
+                    <MessageSquare
                       className="absolute right-3 top-3 text-gray-400"
                       size={20}
                     />
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-gray-700 mb-2">Company</label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                    placeholder="Your company name"
-                  />
-                  <Building
-                    className="absolute right-3 top-3 text-gray-400"
-                    size={20}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-gray-700 mb-2">Message</label>
-                <div className="relative">
-                  <textarea
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all min-h-[120px]"
-                    placeholder="Your message"
-                  />
-                  <MessageSquare
-                    className="absolute right-3 top-3 text-gray-400"
-                    size={20}
-                  />
-                </div>
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#87BD2B] to-[#57830d] text-white font-semibold hover:opacity-90 transition-all duration-300"
-              >
-                Let&apos;s Start Your Project
-              </motion.button>
-            </form>
-          </motion.div>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#87BD2B] to-[#57830d] text-white font-semibold hover:opacity-90 transition-all duration-300"
+                >
+                  Let&apos;s Start Your Project
+                </motion.button>
+              </form>
+            </motion.div>
+          </div>
         </div>
 
         {/* Map Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -265,7 +267,7 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </motion.div>
+        </motion.div> */}
       </section>
     </>
   );
