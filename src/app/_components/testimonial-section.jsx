@@ -28,7 +28,7 @@ const testimonials = [
       "As a non-technical person, managing this project seemed overwhelming, but Pirgun Air Systems made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution. During the drug audit, officials praised our plant as the best in North India. Truly a game-changer—highly recommended!",
     author: "Dharamveer, Director, HHA Healthcare",
     icon: "",
-    avatar: "/coaching-right-img.webp",
+    avatar: "/reviews.png",
     rating: 5,
   },
   {
