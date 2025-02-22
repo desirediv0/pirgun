@@ -1,4 +1,6 @@
-"use client";
+"use client"
+ 
+import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -11,69 +13,66 @@ import {
   ShieldCheck,
   Wrench,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
 } from "lucide-react";
 import WhyChooseUs from "../_components/why-choose-us";
 
-// const stats = [
-//   { number: "10k+", label: "Complete Projects" },
-//   { number: "20+", label: "Team Members" },
-//   { number: "5k+", label: "Winning Awards" },
-//   { number: "100+", label: "Happy Clients" },
-// ];
+const stats = [
+  { number: "10k+", label: "Complete Projects" },
+  { number: "20+", label: "Team Members" },
+  { number: "5k+", label: "Winning Awards" },
+  { number: "100+", label: "Happy Clients" },
+];
 
 const usps = [
   {
     title: "Industry Pioneers",
     description: "First Pharma-Specialized EPC in North India",
-    icon: Award
+    icon: Award,
   },
   {
     title: "Value-Driven Approach",
     description: "Optimal solutions at the right price point",
-    icon: TrendingUp
+    icon: TrendingUp,
   },
   {
     title: "End-to-End Support",
     description: "Comprehensive project and financial assistance",
-    icon: LifeBuoy
+    icon: LifeBuoy,
   },
   {
     title: "Seamless Execution",
     description: "Efficient turnkey project implementation",
-    icon: Workflow
+    icon: Workflow,
   },
   {
     title: "Regulatory Expertise",
     description: "Ensuring compliance at every step",
-    icon: ShieldCheck
+    icon: ShieldCheck,
   },
   {
     title: "Long-Term Reliability",
     description: "Ongoing maintenance and support services",
-    icon: Wrench
+    icon: Wrench,
   },
 ];
 
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <Hero bgImage="aboutus.jpg" Heading="About Us" />
-      {/* Main Content */}
-      <div className="container mx-auto  py-16 max-w-7xl">
-        {/* Company Introduction */}
+
+      <div className="container mx-auto py-16 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="grid lg:grid-cols-2 gap-12 mb-24 px-4"
         >
-          {/* Left Column - Text */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-[#00498b] leading-tight">
-              Pioneering Excellence in{" "}
-              <span className="text-[#89bb25]">Air Systems</span>
+              From Idea to Execution –{" "}
+              <span className="text-[#89bb25]">Let&apos;s Make It Happen</span>
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
               At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
@@ -95,7 +94,6 @@ const AboutPage = () => {
             </Button>
           </div>
 
-          {/* Right Column - Images */}
           <div className="grid grid-cols-2 gap-4">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -143,8 +141,7 @@ const AboutPage = () => {
 
         <WhyChooseUs />
 
-        {/* Stats Section */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -168,9 +165,8 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-        </motion.div> */}
+        </motion.div>
 
-        {/* Vision & Mission */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -211,17 +207,9 @@ const AboutPage = () => {
               meet the needs of today but anticipate the challenges of tomorrow,
               creating environments that inspire productivity and well-being.
             </p>
-            {/* <Image
-              src="/clean-room.jpeg"
-              width={300}
-              height={300}
-              alt="Our Vision"
-              className="mt-6 mx-auto"
-            /> */}
           </div>
         </motion.div>
 
-        {/* USPs */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -254,7 +242,6 @@ const AboutPage = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -265,9 +252,9 @@ const AboutPage = () => {
             Ready to Revolutionize Your Project Management?
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Join hands with Pirgun Air Systems and experience the future of project
-            management. Let&apos;s create sustainable, efficient, and innovative
-            solutions together.
+            Join hands with Pirgun Air Systems and experience the future of
+            project management. Let&apos;s create sustainable, efficient, and
+            innovative solutions together.
           </p>
           <Button
             size="lg"
