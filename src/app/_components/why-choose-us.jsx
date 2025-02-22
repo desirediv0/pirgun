@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
       <InfiniteBrand
         brands={[
           "/lupin.png",
-
+          "/logo1.1.png",
           "/akums.webp",
           "/nectar.png",
         ]}
