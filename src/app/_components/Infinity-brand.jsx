@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import React from 'react'
 
-const InfiniteBrand = ({ 
-  brands = ["ExpertVisa", "GlobalEase", "SwiftPass", "TravelPro", "VisaFlow", "WorldGate"],
+const InfiniteBrand = ({
+  brands = [],
   className = "",
-  itemClassName = "" 
+  itemClassName = ""
 }) => {
   return (
     <div className={`w-full py-8 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] ${className}`}>
@@ -17,6 +17,7 @@ const InfiniteBrand = ({
               src={brand}
               width={180}
               height={100}
+              alt='Brand Logo'
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
             />
           </li>
@@ -29,6 +30,7 @@ const InfiniteBrand = ({
               src={brand}
               width={180}
               height={100}
+              alt='Brand Logo'
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
             />
           </li>
