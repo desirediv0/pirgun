@@ -107,7 +107,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center px-4 py-12">
             {/* Left Column */}
             <motion.div
               className="flex items-center gap-4"
