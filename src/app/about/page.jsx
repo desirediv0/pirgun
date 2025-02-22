@@ -139,7 +139,38 @@ const AboutPage = () => {
           </div>
         </motion.div>
 
-        <WhyChooseUs />
+        {/* <WhyChooseUs /> */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-24 px-4"
+        >
+          <h3 className="text-3xl font-bold text-center text-[#00498b] mb-12">
+            Why Choose Pirgun Air Systems?
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {usps.map((usp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="p-3 rounded-lg bg-[#739827]/10 group-hover:bg-[#739827]/20 transition-colors">
+                    <usp.icon className="w-6 h-6 text-[#739827]" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-[#739827]">
+                    {usp.title}
+                  </h4>
+                </div>
+                <p className="text-gray-600 pl-14">{usp.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -210,37 +241,6 @@ const AboutPage = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-24 px-4"
-        >
-          <h3 className="text-3xl font-bold text-center text-[#00498b] mb-12">
-            Why Choose Pirgun Air Systems?
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {usps.map((usp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 rounded-lg bg-[#739827]/10 group-hover:bg-[#739827]/20 transition-colors">
-                    <usp.icon className="w-6 h-6 text-[#739827]" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-[#739827]">
-                    {usp.title}
-                  </h4>
-                </div>
-                <p className="text-gray-600 pl-14">{usp.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
