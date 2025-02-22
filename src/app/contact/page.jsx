@@ -1,8 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, User, MessageSquare, Building } from "lucide-react";
-import React from 'react';
+import { AnimatePresence, motion } from "framer-motion";
+import { Mail, Phone, MapPin, User, MessageSquare, Building, Smile } from "lucide-react";
+import React, { useEffect, useState } from 'react';
 import Hero from '../_components/Hero';
 import Image from "next/image";
 
@@ -23,10 +23,44 @@ const contactInfo = [
   }
 ];
 
+
+const greetings = [
+  { text: "Hello!", lang: "English" },
+  { text: "नमस्ते!", lang: "Hindi" },
+  { text: "¡Hola!", lang: "Spanish" },
+  { text: "Bonjour!", lang: "French" },
+  { text: "Ciao!", lang: "Italian" },
+  { text: "こんにちは!", lang: "Japanese" },
+  { text: "안녕하세요!", lang: "Korean" },
+  { text: "Hej!", lang: "Swedish" },
+  { text: "Hallo!", lang: "German" },
+  { text: "Olá!", lang: "Portuguese" },
+];
+
 export default function Contact() {
+
+  const [currentGreeting, setCurrentGreeting] = useState(0);
+
+ useEffect  (() => {
+   const interval = setInterval(() => {
+     setCurrentGreeting((prev) => (prev + 1) % greetings.length);
+   }, 2500);
+   return () => clearInterval(interval);
+ }, []);
+
+ const handleSubmit = (e) => {
+   e.preventDefault();
+   console.log(formData);
+ };
+
+
+
   return (
     <>
-      <Hero bgImage="industrial-park-factory-building-warehouse (1).jpg" Heading="Contact Us" />
+      <Hero
+        bgImage="industrial-park-factory-building-warehouse (1).jpg"
+        Heading="Contact Us"
+      />
 
       <section className="bg-gradient-to-b from-white to-gray-50">
         {/* Main Contact Section */}
@@ -73,103 +107,146 @@ export default function Contact() {
             ))}
           </div>
 
-          {/* Contact Form Section */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center px-4">
+            {/* Left Column */}
             <motion.div
+              className="flex items-center gap-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
+              transition={{ duration: 0.6 }}
             >
-              <Image
-                src="/contact.jpeg"
-                width={600}
-                height={600}
-                alt="Contact Us"
-                className="rounded-md h-[550px]  object-cover"
-              />
+              <span className="text-4xl md:text-5xl  font-bold text-gray-800">
+                Say
+              </span>
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={currentGreeting}
+                  className="text-4xl md:text-5xl  font-bold text-gray-800 flex items-center gap-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {greetings[currentGreeting].text}
+                  <span className="text-base font-normal text-gray-500">
+                    ({greetings[currentGreeting].lang})
+                  </span>
+                </motion.h1>
+              </AnimatePresence>
+              <Smile className="w-8 h-8 md:w-12 md:h-12 " />
             </motion.div>
 
+            {/* Right Column */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white p-8 rounded-2xl shadow-lg"
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                Reach Out to Us Today!
-              </h2>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-gray-700 mb-2">Name</label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                        placeholder="Your name"
-                      />
-                      <User
-                        className="absolute right-3 top-3 text-gray-400"
-                        size={20}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-gray-700 mb-2">Email</label>
-                    <div className="relative">
-                      <input
-                        type="email"
-                        className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                        placeholder="Your email"
-                      />
-                      <Mail
-                        className="absolute right-3 top-3 text-gray-400"
-                        size={20}
-                      />
-                    </div>
-                  </div>
-                </div>
+              <p className="text-xs md:text-sm  text-gray-600">
+                We&apos;re here to help and answer any question you might have.
+                we look forward to hearing from you. any need help you please
+                contact us or meet to office with coffee.
+              </p>
+            </motion.div>
+          </div>
+        </div>
 
+        {/* Contact Form Section */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center  px-4">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <Image
+              src="/contact.jpeg"
+              width={600}
+              height={600}
+              alt="Contact Us"
+              className="rounded-md h-[550px]  object-cover"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white p-8 rounded-2xl shadow-lg"
+          >
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">
+              Reach Out to Us Today!
+            </h2>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-700 mb-2">Company</label>
+                  <label className="block text-gray-700 mb-2">Name</label>
                   <div className="relative">
                     <input
                       type="text"
                       className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
-                      placeholder="Your company name"
+                      placeholder="Your name"
                     />
-                    <Building
+                    <User
                       className="absolute right-3 top-3 text-gray-400"
                       size={20}
                     />
                   </div>
                 </div>
-
                 <div>
-                  <label className="block text-gray-700 mb-2">Message</label>
+                  <label className="block text-gray-700 mb-2">Email</label>
                   <div className="relative">
-                    <textarea
-                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all min-h-[120px]"
-                      placeholder="Your message"
+                    <input
+                      type="email"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
+                      placeholder="Your email"
                     />
-                    <MessageSquare
+                    <Mail
                       className="absolute right-3 top-3 text-gray-400"
                       size={20}
                     />
                   </div>
                 </div>
+              </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#87BD2B] to-[#57830d] text-white font-semibold hover:opacity-90 transition-all duration-300"
-                >
-                  Let&apos;s Start Your Project
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
+              <div>
+                <label className="block text-gray-700 mb-2">Company</label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all"
+                    placeholder="Your company name"
+                  />
+                  <Building
+                    className="absolute right-3 top-3 text-gray-400"
+                    size={20}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2">Message</label>
+                <div className="relative">
+                  <textarea
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#87BD2B] focus:ring-2 focus:ring-[#87BD2B]/20 outline-none transition-all min-h-[120px]"
+                    placeholder="Your message"
+                  />
+                  <MessageSquare
+                    className="absolute right-3 top-3 text-gray-400"
+                    size={20}
+                  />
+                </div>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-[#87BD2B] to-[#57830d] text-white font-semibold hover:opacity-90 transition-all duration-300"
+              >
+                Let&apos;s Start Your Project
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
 
         {/* Map Section */}
