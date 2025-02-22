@@ -17,6 +17,7 @@ const InfiniteBrand = ({
               src={brand}
               width={180}
               height={100}
+              alt='logos'
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
             />
           </li>
@@ -29,6 +30,7 @@ const InfiniteBrand = ({
               src={brand}
               width={180}
               height={100}
+              alt='logo'
               className={`bg-transparent hover:text-[#87BD2B] transition-all duration-300 text-[#004225] text-xl sm:text-2xl font-semibold sm:grid hidden place-content-center p-4 ${itemClassName}`}
             />
           </li>
