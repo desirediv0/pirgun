@@ -265,7 +265,7 @@ const AboutPage = () => {
             Ready to Revolutionize Your Project Management?
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Join hands with Pirgun Air Systems and experience the future of air
+            Join hands with Pirgun Air Systems and experience the future of project
             management. Let&apos;s create sustainable, efficient, and innovative
             solutions together.
           </p>

@@ -42,7 +42,7 @@ export default function Banner() {
         <div className="relative h-screen w-full">
           {/* Background Video */}
           <video autoPlay muted loop className="absolute inset-0 h-full w-full object-cover will-change-transform">
-            <source src="/vd2-vmake.mp4" type="video/mp4" />
+            <source src="/bannner-vd2.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay */}
