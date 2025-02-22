@@ -58,7 +58,7 @@ export default function Banner() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="container mx-auto flex h-full flex-col items-start justify-center px-4 text-white"
             >
-              <h1 className="mb-4 max-w-3xl text-5xl font-bold leading-tight md:text-6xl">{slides[currentSlide].title}</h1>
+              <h1 className="mb-4 max-w-3xl text-4xl font-bold leading-tight md:text-6xl">{slides[currentSlide].title}</h1>
               <p className="mb-8 max-w-2xl text-lg md:text-xl">{slides[currentSlide].description}</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
