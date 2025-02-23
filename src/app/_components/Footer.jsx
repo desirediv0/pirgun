@@ -51,15 +51,15 @@ export default function Footer() {
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
             <Image
-              src="/logo.png"
+              src="/white-logo.png"
               alt="Pirgun Logo"
               width={140}
               height={140}
-              className="w-10 h-10"
+              className="w-50 h-50 bg-cover rounded-full"
             />
           </Link>
           <p className="text-white/80">
-          At Pirgun Air Systems, we're not just engineers – we're innovators, problem-solvers, and visionaries.
+            At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re innovators, problem-solvers, and visionaries.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-[#7AB641] transition-colors">
@@ -92,15 +92,20 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Useful Links Section */}
+
         <div>
           <h4 className="text-xl font-semibold mb-4">Useful Link</h4>
           <ul className="space-y-3">
-            {["Home", "About Us", "Services", "Contact"].map((item) => (
-              <li key={item} className="flex items-center gap-2">
+            {[
+              { name: "Home", path: "/" },
+              { name: "About Us", path: "/about" },
+              { name: "Services", path: "/service" },
+              { name: "Contact", path: "/contact" }
+            ].map((item) => (
+              <li key={item.name} className="flex items-center gap-2">
                 <ChevronRight className="w-5 h-5 text-[#7AB641]" />
-                <Link href="#" className="hover:text-[#7AB641] transition-colors">
-                  {item}
+                <Link href={item.path} className="hover:text-[#7AB641] transition-colors">
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -137,7 +142,7 @@ export default function Footer() {
             <Link href="#" className="text-white/80 hover:text-[#7AB641] transition-colors">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-white/80 hover:text-[#7AB641] transition-colors">
+            <Link href="/contact" className="text-white/80 hover:text-[#7AB641] transition-colors">
               Contact Us
             </Link>
           </div>
