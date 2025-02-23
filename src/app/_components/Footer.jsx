@@ -53,14 +53,13 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Pirgun Logo"
-              width={40}
-              height={40}
+              width={140}
+              height={140}
               className="w-10 h-10"
             />
-            Pirgun
           </Link>
           <p className="text-white/80">
-            Corporate business typically refers to large-scale mansola it enterprises or organizat
+          At Pirgun Air Systems, we're not just engineers – we're innovators, problem-solvers, and visionaries.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-[#7AB641] transition-colors">
@@ -82,10 +81,10 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Services</h4>
           <ul className="space-y-3">
-            {["Mistakes To Avoid", "Your Startup", "Knew About Fonts", "Travel Guide"].map((item) => (
+            {["Design Consultancy", "Project Management Consultancy", "End-to-End Turnkey Execution", "AMC & Maintenance Contracts"].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-[#7AB641]" />
-                <Link href="#" className="hover:text-[#7AB641] transition-colors">
+                <Link href="/service" className="hover:text-[#7AB641] transition-colors">
                   {item}
                 </Link>
               </li>
@@ -97,7 +96,7 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">Useful Link</h4>
           <ul className="space-y-3">
-            {["Latest News", "Careers", "General Inquiries", "Case Studies"].map((item) => (
+            {["Home", "About Us", "Services", "Contact"].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <ChevronRight className="w-5 h-5 text-[#7AB641]" />
                 <Link href="#" className="hover:text-[#7AB641] transition-colors">

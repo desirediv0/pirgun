@@ -11,7 +11,7 @@ const menuItems = [
   { name: "Home", icon: <House />, href: "/" },
   { name: "About Us", icon: <BookUser />, href: "/about" },
   { name: "Services", icon: <CircleCheckBig />, href: "/service" },
-  { name: "Industries Served", icon: <Factory />, href: "/service" },
+  // { name: "Industries Served", icon: <Factory />, href: "/service" },
   // { name: "Projects", icon: <FolderKanban />, href: "/service" },
   // { name: "Testimonials", icon: <Star />, href: "/service" },
   { name: "Contact", icon: <Contact />, href: "/contact" },
