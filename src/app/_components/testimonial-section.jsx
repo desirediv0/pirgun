@@ -65,7 +65,7 @@ export function TestimonialSection() {
       <h2 className="  md:text-5xl text-4xl font-bold text-[#004225] mb-12 text-center">
         Our Testimonials
       </h2>
-      <div className="grid md:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4 ">
+      <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4 ">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -163,9 +163,8 @@ export function TestimonialSection() {
                     setIsAutoPlaying(false);
                     setCurrentIndex(index);
                   }}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    currentIndex === index ? "w-6 bg-white" : "bg-white/50"
-                  }`}
+                  className={`w-2 h-2 rounded-full transition-all ${currentIndex === index ? "w-6 bg-white" : "bg-white/50"
+                    }`}
                 />
               ))}
             </div>
