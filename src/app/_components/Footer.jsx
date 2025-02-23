@@ -46,22 +46,22 @@ export default function Footer() {
       </div> */}
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 grid md:grid-cols-4 gap-8">
         {/* Brand Section */}
-        <div className="space-y-4">
-          <Link href="/" className="flex items-center gap-2 text-2xl font-bold">
+        <div className="space-y-2 text-left">
+          <Link href="/" className="flex items-start gap-2 text-2xl font-bold">
             <Image
               src="/white-logo.png"
               alt="Pirgun Logo"
               width={140}
               height={140}
-              className="w-50 h-50 bg-cover rounded-full"
+              className="w-28 h-2w-28 bg-cover rounded-full"
             />
           </Link>
-          <p className="text-white/80">
+          <p className="text-white/80 text-left">
             At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re innovators, problem-solvers, and visionaries.
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4 justify-start">
             <Link href="#" className="hover:text-[#7AB641] transition-colors">
               <Facebook className="w-6 h-6" />
             </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
             <Link href="#" className="hover:text-[#7AB641] transition-colors">
               <Linkedin className="w-6 h-6" />
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Services Section */}
