@@ -1,3 +1,4 @@
+"use client";
 import {
   Send,
   Facebook,
@@ -26,7 +27,7 @@ export default function Footer() {
       />
 
       {/* Top Support Section */}
-      {/* <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 border-b border-white/10">
+      {/* <div className="container mx-auto px-4 py-8 grid lg:grid-cols-2 gap-8 border-b border-white/10">
         <div className="flex items-center gap-4">
           <div className="bg-[#7AB641] rounded-full p-4">
             <Camera className="w-10 h-10 text-white" />
@@ -46,16 +47,16 @@ export default function Footer() {
       </div> */}
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-8 grid md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 grid lg:grid-cols-4 gap-8">
         {/* Brand Section */}
         <div className="space-y-2 text-left">
           <Link href="/" className="flex items-start gap-2 text-2xl font-bold">
             <Image
-              src="/white-logo.png"
+              src="/white-logo2.png"
               alt="Pirgun Logo"
               width={140}
               height={140}
-              className="w-28 h-2w-28 bg-cover rounded-full"
+              className="w-24 h-24 bg-cover"
             />
           </Link>
           <p className="text-white/80 text-left">
@@ -118,16 +119,17 @@ export default function Footer() {
           <p className="mb-4 text-white/80">
             Corporate business typically refers to large-scale mansola it.
           </p>
-          <div className="flex">
+          <form onSubmit={(e) => e.preventDefault()} className="flex">
             <input
               type="email"
               placeholder="Enter Email"
               className="flex-1 px-4 py-2 bg-black/20 rounded-l-full focus:outline-none"
+              required
             />
-            <button className="bg-[#7AB641] p-2 rounded-r-full hover:bg-[#7AB641]/90 transition-colors">
+            <button type="submit" className="bg-[#7AB641] p-2 rounded-r-full hover:bg-[#7AB641]/90 transition-colors">
               <Send className="w-6 h-6" />
             </button>
-          </div>
+          </form>
         </div>
       </div>
 
