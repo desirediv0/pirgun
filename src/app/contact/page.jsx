@@ -28,14 +28,14 @@ const contactInfo = [
 const greetings = [
   { text: "Hello!", lang: "English" },
   { text: "नमस्ते!", lang: "Hindi" },
-  { text: "¡Hola!", lang: "Spanish" },
-  { text: "Bonjour!", lang: "French" },
-  { text: "Ciao!", lang: "Italian" },
-  { text: "こんにちは!", lang: "Japanese" },
-  { text: "안녕하세요!", lang: "Korean" },
-  { text: "Hej!", lang: "Swedish" },
-  { text: "Hallo!", lang: "German" },
-  { text: "Olá!", lang: "Portuguese" },
+  // { text: "¡Hola!", lang: "Spanish" },
+  // { text: "Bonjour!", lang: "French" },
+  // { text: "Ciao!", lang: "Italian" },
+  // { text: "こんにちは!", lang: "Japanese" },
+  // { text: "안녕하세요!", lang: "Korean" },
+  // { text: "Hej!", lang: "Swedish" },
+  // { text: "Hallo!", lang: "German" },
+  // { text: "Olá!", lang: "Portuguese" },
 ];
 
 export default function Contact() {
@@ -86,9 +86,9 @@ export default function Contact() {
                   transition={{ duration: 0.3 }}
                 >
                   {greetings[currentGreeting].text}
-                  <span className="text-base font-normal text-gray-500">
+                  {/* <span className="text-base font-normal text-gray-500">
                     ({greetings[currentGreeting].lang})
-                  </span>
+                  </span> */}
                 </motion.h1>
               </AnimatePresence>
               <Smile className="w-8 h-8 md:w-12 md:h-12 " />

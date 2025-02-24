@@ -37,7 +37,13 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="relative cursor-pointer mx-auto"
           >
-            <Image src="/logo.png" objectFit="contain" width={160} height={160} alt="Logo" />
+            <Image
+              src="/logo.png"
+              objectFit="contain"
+              width={160}
+              height={160}
+              alt="Logo"
+            />
           </motion.div>
         </div>
 
@@ -51,7 +57,9 @@ export default function Navbar() {
                 className="text-base font-medium text-[#00488D] flex"
               >
                 <span>{item.icon}</span>
-                <Link href={item.href} className="ps-2">{item.name}</Link>
+                <Link href={item.href} className="ps-2">
+                  {item.name}
+                </Link>
               </motion.li>
             ))}
           </ul>
@@ -62,6 +70,9 @@ export default function Navbar() {
             <Phone size={22} color="#465568" />
             <span className="ps-1 text-[#465568] text-md">+91 124 711 8233</span>
           </div> */}
+        <Link 
+        href={"/contact"}
+         >
           <motion.button
             className="w-full bg-[#00488D] text-white py-2 px-4 rounded-lg text-md font-medium shadow-lg"
             whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
@@ -69,6 +80,8 @@ export default function Navbar() {
           >
             Appointment
           </motion.button>
+        
+        </Link>
         </motion.div>
       </motion.nav>
 
@@ -88,7 +101,10 @@ export default function Navbar() {
             <Menu size={28} />
           </motion.button>
 
-          <div onClick={() => router.push("/")} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+          <div
+            onClick={() => router.push("/")}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+          >
             <Image src="/logo.png" width={140} height={60} alt="Logo" />
           </div>
         </div>
@@ -142,7 +158,11 @@ export default function Navbar() {
                         className="text-lg font-medium text-[#00488D] flex"
                       >
                         <span>{item.icon}</span>
-                        <Link href={item.href} className="ps-2" onClick={() => setIsOpen(false)}>
+                        <Link
+                          href={item.href}
+                          className="ps-2"
+                          onClick={() => setIsOpen(false)}
+                        >
                           {item.name}
                         </Link>
                       </motion.li>
@@ -155,14 +175,16 @@ export default function Navbar() {
                     <Phone size={22} color="#465568" />
                     <span className="ps-1 text-[#465568] text-md">+91 124 711 8233</span>
                   </div> */}
-                  <motion.button
-                    className="w-full bg-[#00488D] text-white py-3 px-4 rounded-lg text-lg font-medium shadow-lg"
-                    whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Appointment
-                  </motion.button>
+                  <Link href={"/contact"}>
+                    <motion.button
+                      className="w-full bg-[#00488D] text-white py-3 px-4 rounded-lg text-lg font-medium shadow-lg"
+                      whileHover={{ scale: 1.05, backgroundColor: "#87BD2B" }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Appointment
+                    </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -170,5 +192,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }
