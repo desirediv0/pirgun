@@ -14,14 +14,10 @@ export default function Home() {
     <>
       <Banner />
       <WhyChooseUs />
-      {/* <CountryCarousel/> */}
       <VisaCategories />
-      {/* <AvailableCountries /> */}
       <TestimonialSection />
       <OfferHero />
-      {/* <CoachingCarousel /> */}
-      {/* <TeamSection /> */}
-      {/* <ProcessOverview /> */}
+   
     </>
   );
 }
