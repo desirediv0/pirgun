@@ -102,8 +102,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                      Image Idea: A professional handshake between two business
-                      partners, symbolizing trust and smooth collaboration.
+                    From concept to completion, we ensure a smooth, efficient, and stress-free process for every project.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -128,8 +127,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                      Image Idea: A dedicated team working together on a
-                      project, showcasing expertise and hands-on support
+                    We provide comprehensive support at every stage, ensuring flawless execution and alignment with your vision.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -154,9 +152,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                      Image Idea: A business leader or team looking at a roadmap
-                      or blueprint, representing strategic alignment and
-                      goal-oriented execution.
+                    We collaborate closely to bring your vision to life, delivering results that reflect your unique goals and aspirations.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -182,9 +178,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                      Image Idea: A sleek, futuristic interface with connected
-                      digital elements, symbolizing smooth and seamless
-                      integration.
+                    Our solutions are designed for seamless compatibility, making implementation easy and disruption-free.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
