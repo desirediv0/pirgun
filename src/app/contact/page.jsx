@@ -16,12 +16,12 @@ const contactInfo = [
     color: "#87BD2B",
   },
 
-  {
-    icon: MapPin,
-    title: "Office Location",
-    value: "Dwarka, New Delhi, India",
-    color: "#87BD2B",
-  },
+  // {
+  //   icon: MapPin,
+  //   title: "Office Location",
+  //   value: "Dwarka, New Delhi, India",
+  //   color: "#87BD2B",
+  // },
 ];
 
 

@@ -116,9 +116,9 @@ export default function Footer() {
         {/* Newsletter Section */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Subscribe Our Newsletter</h4>
-          <p className="mb-4 text-white/80">
+          {/* <p className="mb-4 text-white/80">
             Corporate business typically refers to large-scale mansola it.
-          </p>
+          </p> */}
           <form onSubmit={(e) => e.preventDefault()} className="flex">
             <input
               type="email"
@@ -137,7 +137,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
           <p className="text-white/80">© 2025 Pirgun Air Systems | All Rights Reserved</p>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <Link href="#" className="text-white/80 hover:text-[#7AB641] transition-colors">
               Terms & Conditions
             </Link>
@@ -147,7 +147,7 @@ export default function Footer() {
             <Link href="/contact" className="text-white/80 hover:text-[#7AB641] transition-colors">
               Contact Us
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
