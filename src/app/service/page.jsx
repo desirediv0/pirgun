@@ -9,6 +9,7 @@ import {
   Wrench,
   ArrowRight
 } from 'lucide-react'
+import Link from 'next/link'
 
 const services = [
   {
@@ -130,6 +131,7 @@ export default function Service() {
           <h3 className="text-2xl font-bold text-gray-800 mb-6">
             Let&apos;s build your success story together
           </h3>
+          <Link href={"/contact"}>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -137,6 +139,7 @@ export default function Service() {
           >
             Get in Touch Today
           </motion.button>
+          </Link>
         </motion.div>
       </motion.section>
     </>

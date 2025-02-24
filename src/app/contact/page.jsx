@@ -86,9 +86,7 @@ export default function Contact() {
                   transition={{ duration: 0.3 }}
                 >
                   {greetings[currentGreeting].text}
-                  {/* <span className="text-base font-normal text-gray-500">
-                    ({greetings[currentGreeting].lang})
-                  </span> */}
+                 
                 </motion.h1>
               </AnimatePresence>
               <Smile className="w-8 h-8 md:w-12 md:h-12 " />
