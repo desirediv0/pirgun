@@ -76,13 +76,13 @@ export default function Banner() {
               <p className="mb-8 max-w-2xl text-lg md:text-xl">
                 {slides[currentSlide].description}
               </p>
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full bg-[#87BD2B] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#87BD2B]/90"
               >
                 {slides[currentSlide].cta}
-              </motion.button>
+              </motion.button> */}
             </motion.div>
 
             {/* Navigation Dots */}
