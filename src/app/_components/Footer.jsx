@@ -1,14 +1,8 @@
 "use client";
 import {
   Send,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
   CheckCircle2,
   ChevronRight,
-  Camera,
-  Globe
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -26,26 +20,6 @@ export default function Footer() {
         }}
       />
 
-      {/* Top Support Section */}
-      {/* <div className="container mx-auto px-4 py-8 grid lg:grid-cols-2 gap-8 border-b border-white/10">
-        <div className="flex items-center gap-4">
-          <div className="bg-[#7AB641] rounded-full p-4">
-            <Camera className="w-10 h-10 text-white" />
-          </div>
-          <h3 className="text-2xl font-semibold">
-            Need Any Support For?
-          </h3>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="bg-[#7AB641] rounded-full p-4">
-            <Globe className="w-10 h-10 text-white" />
-          </div>
-          <h3 className="text-2xl font-semibold">
-            Are You Ready For Get?
-          </h3>
-        </div>
-      </div> */}
-
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-8 grid lg:grid-cols-4 gap-8">
         {/* Brand Section */}
@@ -62,20 +36,7 @@ export default function Footer() {
           <p className="text-white/80 text-left">
             At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re innovators, problem-solvers, and visionaries.
           </p>
-          {/* <div className="flex gap-4 justify-start">
-            <Link href="#" className="hover:text-[#7AB641] transition-colors">
-              <Facebook className="w-6 h-6" />
-            </Link>
-            <Link href="#" className="hover:text-[#7AB641] transition-colors">
-              <Instagram className="w-6 h-6" />
-            </Link>
-            <Link href="#" className="hover:text-[#7AB641] transition-colors">
-              <Twitter className="w-6 h-6" />
-            </Link>
-            <Link href="#" className="hover:text-[#7AB641] transition-colors">
-              <Linkedin className="w-6 h-6" />
-            </Link>
-          </div> */}
+
         </div>
 
         {/* Services Section */}
@@ -116,9 +77,6 @@ export default function Footer() {
         {/* Newsletter Section */}
         <div>
           <h4 className="text-xl font-semibold mb-4">Subscribe Our Newsletter</h4>
-          {/* <p className="mb-4 text-white/80">
-            Corporate business typically refers to large-scale mansola it.
-          </p> */}
           <form onSubmit={(e) => e.preventDefault()} className="flex">
             <input
               type="email"
@@ -137,17 +95,17 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
           <p className="text-white/80">© 2025 Pirgun Air Systems | All Rights Reserved</p>
-          {/* <div className="flex gap-6">
-            <Link href="#" className="text-white/80 hover:text-[#7AB641] transition-colors">
-              Terms & Conditions
-            </Link>
-            <Link href="#" className="text-white/80 hover:text-[#7AB641] transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/contact" className="text-white/80 hover:text-[#7AB641] transition-colors">
-              Contact Us
-            </Link>
-          </div> */}
+          <p className="text-white/80">
+            Designed with <span className="text-red-500">❤</span> by {" "}
+            <a
+              href="https://desirediv.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#7AB641] transition-colors font-medium"
+            >
+              Desire Div
+            </a>
+          </p>
         </div>
       </div>
     </footer>
