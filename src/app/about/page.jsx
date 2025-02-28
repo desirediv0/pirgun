@@ -1,8 +1,8 @@
 "use client"
- 
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Hero from "../_components/Hero";
 import {
@@ -14,8 +14,9 @@ import {
   Wrench,
   ArrowRight,
   CheckCircle,
+  ExternalLink,
 } from "lucide-react";
-import WhyChooseUs from "../_components/why-choose-us";
+import { useInView } from "react-intersection-observer";
 
 const stats = [
   { number: "10k+", label: "Complete Projects" },
@@ -57,64 +58,138 @@ const usps = [
   },
 ];
 
+const mission = [
+  "Deliver Value-Driven Solutions",
+  "Support Financial Planning",
+  "Innovate with Expertise",
+  "Ensure Compliance & Efficiency",
+  "Build Strong Partnerships",
+];
+
 const AboutPage = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [activeTab, setActiveTab] = useState("mission");
+
+  // Animations for scroll-triggered elements
+  const introControls = useAnimation();
+  const chooseUsControls = useAnimation();
+  const statsControls = useAnimation();
+  const missionVisionControls = useAnimation();
+  const ctaControls = useAnimation();
+
+  const [introRef, introInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [chooseUsRef, chooseUsInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [statsRef, statsInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [missionVisionRef, missionVisionInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ctaRef, ctaInView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  // Trigger animations when sections come into view
+  useEffect(() => {
+    if (introInView) introControls.start("visible");
+    if (chooseUsInView) chooseUsControls.start("visible");
+    if (statsInView) statsControls.start("visible");
+    if (missionVisionInView) missionVisionControls.start("visible");
+    if (ctaInView) ctaControls.start("visible");
+  }, [introInView, chooseUsInView, statsInView, missionVisionInView, ctaInView]);
+
+  // Animation variants
+  const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       <Hero bgImage="aboutus.jpg" Heading="About Us" />
 
+      {/* Introduction Section */}
       <div className="container mx-auto py-16 max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          ref={introRef}
+          variants={containerVariant}
+          initial="hidden"
+          animate={introControls}
           className="grid lg:grid-cols-2 gap-12 mb-24 px-4"
         >
-          <div className="space-y-6">
+          <motion.div variants={itemVariant} className="space-y-6">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="h-1 w-12 bg-[#89bb25]"></div>
+              <span className="text-[#89bb25] font-semibold uppercase tracking-wider text-sm">Our Story</span>
+            </div>
             <h2 className="text-4xl font-bold text-[#00498b] leading-tight">
               From Idea to Execution –{" "}
               <span className="text-[#89bb25]">Let&apos;s Make It Happen</span>
             </h2>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            <motion.p variants={itemVariant} className="text-gray-700 leading-relaxed text-lg">
               At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
               innovators, problem-solvers, and visionaries. Our mission is to
               revolutionize project execution & project technologies with
               cutting-edge technology and unparalleled expertise.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
+            </motion.p>
+            <motion.p variants={itemVariant} className="text-gray-700 leading-relaxed text-lg">
               From concept to execution, we deliver smart, efficient, and
               sustainable solutions that propel industries forward. Our
               commitment to quality and innovation ensures that every project we
               undertake sets new benchmarks in the field.
-            </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:from-[#89bb25] hover:to-[#00498b] transition-all duration-300"
-            >
-              Discover Our Approach <ArrowRight className="ml-2" />
-            </Button>
-          </div>
+            </motion.p>
+            <motion.div variants={itemVariant}>
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Discover Our Approach <ArrowRight className="ml-2" />
+              </Button>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <motion.div variants={containerVariant} className="grid grid-cols-2 gap-4">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-              className="rounded-2xl overflow-hidden shadow-lg"
+              variants={itemVariant}
+              whileHover={{ scale: 1.03, rotate: 1 }}
+              transition={{ duration: 0.3 }}
+              className="rounded-2xl overflow-hidden shadow-lg relative group"
             >
+              <div className="absolute inset-0 bg-gradient-to-t from-[#00498b]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Image
                 src="/img2.png"
                 alt="Engineering Excellence"
                 width={400}
                 height={500}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="font-medium text-sm">Engineering Excellence</p>
+              </div>
             </motion.div>
             <div className="space-y-4">
               <motion.div
+                variants={itemVariant}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
-                className="bg-gradient-to-br from-[#89bb25] to-[#afd365] rounded-2xl p-6 text-white shadow-lg"
+                className="bg-gradient-to-br from-[#89bb25] to-[#afd365] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden"
               >
-                <div className="flex items-center">
+                <motion.div
+                  className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+                <div className="flex items-center relative z-10">
                   <span className="text-5xl font-bold">25 +</span>
                   <div className="ml-4">
                     <p className="font-semibold">Years Of</p>
@@ -123,145 +198,281 @@ const AboutPage = () => {
                 </div>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-                className="rounded-2xl overflow-hidden shadow-lg"
+                variants={itemVariant}
+                whileHover={{ scale: 1.03, rotate: -1 }}
+                transition={{ duration: 0.3 }}
+                className="rounded-2xl overflow-hidden shadow-lg relative group"
               >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00498b]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <Image
                   src="/img1.png"
                   alt="Innovative Solutions"
                   width={400}
                   height={300}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="font-medium text-sm">Innovative Solutions</p>
+                </div>
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* <WhyChooseUs /> */}
+        {/* Why Choose Us Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          ref={chooseUsRef}
+          variants={containerVariant}
+          initial="hidden"
+          animate={chooseUsControls}
           className="mb-24 px-4"
         >
-          <h3 className="text-3xl font-bold text-center text-[#00498b] mb-12">
-            Why Choose Pirgun Air Systems?
-          </h3>
+          <motion.div variants={itemVariant} className="text-center mb-12">
+            <span className="text-[#89bb25] font-semibold uppercase tracking-wider text-sm">Our Strengths</span>
+            <h3 className="text-3xl font-bold text-[#00498b] mt-2">
+              Why Choose Pirgun Air Systems?
+            </h3>
+            <div className="w-24 h-1 bg-[#89bb25] mx-auto mt-4" />
+          </motion.div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {usps.map((usp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                variants={itemVariant}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                onHoverStart={() => setHoveredCard(index)}
+                onHoverEnd={() => setHoveredCard(null)}
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 group border border-gray-100"
               >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 rounded-lg bg-[#739827]/10 group-hover:bg-[#739827]/20 transition-colors">
-                    <usp.icon className="w-6 h-6 text-[#739827]" />
-                  </div>
-                  <h4 className="text-xl font-semibold text-[#739827]">
-                    {usp.title}
-                  </h4>
-                </div>
-                <p className="text-gray-600 pl-14">{usp.description}</p>
+                <motion.div
+                  className="p-4 rounded-2xl bg-[#89bb25]/10 group-hover:bg-[#89bb25]/20 mb-6 transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  animate={{
+                    rotate: hoveredCard === index ? 360 : 0
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <usp.icon className="w-7 h-7 text-[#89bb25]" />
+                </motion.div>
+                <h4 className="text-xl font-semibold text-[#00498b] mb-3 group-hover:text-[#89bb25] transition-colors duration-300">
+                  {usp.title}
+                </h4>
+                <p className="text-gray-600">{usp.description}</p>
+
+                <motion.div
+                  className="mt-6 flex items-center text-[#89bb25] font-medium"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: hoveredCard === index ? 1 : 0,
+                    x: hoveredCard === index ? 0 : -10
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span>Learn more</span>
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </motion.div>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
+        {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          ref={statsRef}
+          variants={containerVariant}
+          initial="hidden"
+          animate={statsControls}
           className="mb-24"
         >
-          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-3xl p-8">
+          <div className="bg-gradient-to-r from-[#f9fcf4] to-[#f0f7ea] rounded-3xl p-8 shadow-lg">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
+                  variants={itemVariant}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center p-6 bg-white rounded-xl shadow-sm"
                 >
-                  <h3 className="text-4xl md:text-5xl font-bold text-[#89bb25]">
+                  <motion.h3
+                    className="text-4xl md:text-5xl font-bold text-[#89bb25]"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
                     {stat.number}
-                  </h3>
-                  <p className="text-gray-600 text-sm mt-2">{stat.label}</p>
+                  </motion.h3>
+                  <motion.div
+                    className="w-12 h-1 bg-[#00498b]/30 mx-auto my-3"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 48 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  />
+                  <p className="text-gray-600 text-sm">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.div>
 
+        {/* Mission & Vision Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-2 gap-12 mb-24 px-4"
+          ref={missionVisionRef}
+          variants={containerVariant}
+          initial="hidden"
+          animate={missionVisionControls}
+          className="mb-24 px-4"
         >
-          <div className="bg-gradient-to-br from-[#89bb25] to-[#00498b] p-8 rounded-3xl shadow-xl text-white">
-            <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
-            <ul className="space-y-4">
-              {[
-                "Deliver Value-Driven Solutions",
-                "Support Financial Planning",
-                "Innovate with Expertise",
-                "Ensure Compliance & Efficiency",
-                "Build Strong Partnerships",
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-start"
-                >
-                  <CheckCircle className="mr-3 h-6 w-6 flex-shrink-0" />
-                  <span>{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-white bg-opacity-50 backdrop-filter backdrop-blur-lg p-8 rounded-3xl shadow-xl">
-            <h3 className="text-3xl font-bold text-[#00498b] mb-6">
-              Our Vision
+          <div className="mb-12 text-center">
+            <span className="text-[#89bb25] font-semibold uppercase tracking-wider text-sm">Our Purpose</span>
+            <h3 className="text-3xl font-bold text-[#00498b] mt-2">
+              Mission & Vision
             </h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              To be the catalyst for transformation in the air systems industry,
-              setting new standards in innovation, sustainability, and client
-              satisfaction. We envision a future where our solutions not only
-              meet the needs of today but anticipate the challenges of tomorrow,
-              creating environments that inspire productivity and well-being.
-            </p>
+            <div className="w-24 h-1 bg-[#89bb25] mx-auto mt-4" />
           </div>
+
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-100 p-1 rounded-full inline-flex">
+              <motion.button
+                className={`px-6 py-2 rounded-full ${activeTab === 'mission' ? 'bg-[#00498b] text-white' : 'text-gray-600'}`}
+                onClick={() => setActiveTab('mission')}
+                whileHover={{ scale: activeTab !== 'mission' ? 1.05 : 1 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Mission
+              </motion.button>
+              <motion.button
+                className={`px-6 py-2 rounded-full ${activeTab === 'vision' ? 'bg-[#00498b] text-white' : 'text-gray-600'}`}
+                onClick={() => setActiveTab('vision')}
+                whileHover={{ scale: activeTab !== 'vision' ? 1.05 : 1 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Vision
+              </motion.button>
+            </div>
+          </div>
+
+          <AnimatePresence mode="wait">
+            {activeTab === 'mission' ? (
+              <motion.div
+                key="mission"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="bg-gradient-to-br from-[#89bb25] to-[#00498b] p-8 rounded-3xl shadow-xl text-white relative overflow-hidden"
+              >
+                <motion.div
+                  className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.div
+                  className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full -ml-20 -mb-20"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+                <h3 className="text-3xl font-bold mb-6 relative z-10">Our Mission</h3>
+                <ul className="space-y-4 relative z-10">
+                  {mission.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.1 }}
+                      className="flex items-start"
+                    >
+                      <CheckCircle className="mr-3 h-6 w-6 flex-shrink-0 text-white/70" />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="vision"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden"
+              >
+                <motion.div
+                  className="absolute top-0 right-0 w-64 h-64 bg-[#89bb25]/5 rounded-full -mr-32 -mt-32"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                />
+                <motion.div
+                  className="absolute bottom-0 left-0 w-40 h-40 bg-[#00498b]/5 rounded-full -ml-20 -mb-20"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+                <h3 className="text-3xl font-bold text-[#00498b] mb-6 relative z-10">
+                  Our Vision
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed relative z-10">
+                  To be the catalyst for transformation in the air systems industry,
+                  setting new standards in innovation, sustainability, and client
+                  satisfaction. We envision a future where our solutions not only
+                  meet the needs of today but anticipate the challenges of tomorrow,
+                  creating environments that inspire productivity and well-being.
+                </p>
+                <div className="flex justify-end mt-6">
+                  <motion.div
+                    className="p-3 rounded-full bg-[#89bb25]/10 text-[#89bb25]"
+                    whileHover={{ scale: 1.1, backgroundColor: "rgba(137, 187, 37, 0.2)" }}
+                  >
+                    <ExternalLink className="h-5 w-5" />
+                  </motion.div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
 
-
+        {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16 px-4"
+          ref={ctaRef}
+          variants={containerVariant}
+          initial="hidden"
+          animate={ctaControls}
+          className="text-center mb-16 px-4 relative"
         >
-          <h2 className="text-4xl font-bold text-[#00498b] mb-6">
+          <motion.div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#89bb25]/5 rounded-full -z-10"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.h2
+            variants={itemVariant}
+            className="text-4xl font-bold text-[#00498b] mb-6"
+          >
             Ready to Revolutionize Your Project Management?
-          </h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            variants={itemVariant}
+            className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto"
+          >
             Join hands with Pirgun Air Systems and experience the future of
             project management. Let&apos;s create sustainable, efficient, and
             innovative solutions together.
-          </p>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:from-[#89bb25] hover:to-[#00498b] transition-all duration-300"
+          </motion.p>
+          <motion.div
+            variants={itemVariant}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
-            Start Your Journey <ArrowRight className="ml-2" />
-          </Button>
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:shadow-lg transition-all duration-300 px-8"
+            >
+              Start Your Journey <ArrowRight className="ml-2" />
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </div>
