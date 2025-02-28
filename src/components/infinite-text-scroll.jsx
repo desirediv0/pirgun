@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { AnimatedText } from "./AnimatedText";
 
 export function InfiniteTextScroll({
     text,
@@ -73,11 +72,12 @@ export function InfiniteTextScroll({
                 </motion.div>
             </div>
 
-            {/* Foreground static text */}
-            <AnimatedText
-                text={text}
-                className="absolute inset-0 flex items-center justify-center text-center text-[#1a1a1a] text-3xl text-wrap md:text-5xl  font-semibold"
-            />
+            {/* Foreground static text - updated positioning */}
+            <div className="absolute top-5 md:top-3 left-0 w-full h-full flex items-center justify-center z-20">
+                <h1 className="text-center text-[#1a1a1a] text-3xl px-4 md:text-5xl font-semibold max-w-3xl mx-auto">
+                    {text}
+                </h1>
+            </div>
         </div>
     );
 }

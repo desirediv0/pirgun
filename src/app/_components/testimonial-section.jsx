@@ -60,7 +60,7 @@ export function TestimonialSection() {
   }
 
   return (
-    <section className="py-16 px-8">
+    <section className=" px-8">
       {/* <h1 className="md:text-5xl text-4xl  "> </h1> */}
 
       <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4 ">

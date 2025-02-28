@@ -25,19 +25,19 @@ function Case({ brands }) {
         api.scrollNext();
         setCurrent(current + 1);
       }
-    }, 1000);
+    }, 2000);
   }, [api, current]);
 
   return (
     <div className="w-full py-20 ">
       <div className="container mx-auto">
-        <div className="flex flex-col  gap-10 ">
+        <div className="flex flex-col  gap-10">
           <Carousel setApi={setApi} className="w-full">
-          
+
             <CarouselContent>
               {brands.map((data, index) => (
-                <CarouselItem className="basis-1/4 " key={index}>
-                 <Image src={data} width={100} height={100} alt="logos" />
+                <CarouselItem className="basis-1/5" key={index}>
+                  <Image src={data} width={100} height={100} alt="logos" className="object-cover" />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -48,4 +48,4 @@ function Case({ brands }) {
   );
 };
 
-export  {Case};
+export { Case };

@@ -22,6 +22,15 @@ export default function WhyChooseUs() {
           "/logo1.4.png",
           "/logo1.5.png",
           "/logo1.6.png",
+          "/lupin.png",
+          "/logo1.1.png",
+          "/akums.webp",
+          "/nectar.png",
+          "/logo1.2.png",
+          "/logo1.3.png",
+          "/logo1.4.png",
+          "/logo1.5.png",
+          "/logo1.6.png",
         ]}
       />
       <div className="container mx-auto px-4">
