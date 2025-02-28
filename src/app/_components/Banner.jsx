@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { ChevronDown, Router } from "lucide-react"
 import { useRouter } from "next/navigation"
 import AnimatedDots from "@/components/AnimatedDots"
@@ -21,14 +21,17 @@ const slides = [
 ]
 
 const stats = [
-  { number: "100+", label: "Complete Projects" },
-  { number: "50+", label: "Team Members" },
-  { number: "200+", label: " Cities Serving Capabilities  " },
-  { number: "99%", label: "Happy Customers" },
+  { number: "100+", value: 100, label: "Complete Projects" },
+  { number: "50+", value: 50, label: "Team Members" },
+  { number: "200+", value: 200, label: " Cities Serving Capabilities  " },
+  { number: "99%", value: 99, label: "Happy Customers" },
 ];
 
 export default function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [countUp, setCountUp] = useState([0, 0, 0, 0]);
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef(null);
 
   const router = useRouter();
   const handleClick = () => {
@@ -43,6 +46,61 @@ export default function Banner() {
 
     return () => clearInterval(timer)
   }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (statsRef.current) {
+      observer.observe(statsRef.current);
+    }
+
+    return () => {
+      if (statsRef.current) {
+        observer.unobserve(statsRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const counters = stats.map(stat => {
+        return {
+          value: parseInt(stat.value),
+          duration: 2000, // 2 seconds to count up
+        };
+      });
+
+      const intervals = counters.map((counter, index) => {
+        const stepTime = counter.duration / counter.value;
+        let currentCount = 0;
+
+        return setInterval(() => {
+          currentCount += 1;
+
+          setCountUp(prev => {
+            const newCounts = [...prev];
+            newCounts[index] = Math.min(currentCount, counter.value);
+            return newCounts;
+          });
+
+          if (currentCount >= counter.value) {
+            clearInterval(intervals[index]);
+          }
+        }, stepTime);
+      });
+
+      return () => {
+        intervals.forEach(interval => clearInterval(interval));
+      };
+    }
+  }, [isVisible]);
 
   return (
     <>
@@ -125,13 +183,14 @@ export default function Banner() {
         {/* Stats Section */}
         <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:w-[80%] w-full">
           <motion.div
+            ref={statsRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             className="bg-[#87BD2B] rounded-2xl p-8"
           >
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
@@ -142,7 +201,7 @@ export default function Banner() {
                   className="text-center"
                 >
                   <h3 className="text-3xl md:text-4xl font-bold text-white">
-                    {stat.number}
+                    {isVisible ? `${countUp[index]}${stat.number.includes('+') ? '+' : stat.number.includes('%') ? '%' : ''}` : "0"}
                   </h3>
                   <p className="text-white/90 text-sm mt-1">{stat.label}</p>
                 </motion.div>
@@ -154,4 +213,3 @@ export default function Banner() {
     </>
   );
 }
-
