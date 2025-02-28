@@ -37,7 +37,7 @@ function Case({ brands }) {
             <CarouselContent>
               {brands.map((data, index) => (
                 <CarouselItem className="basis-1/4 " key={index}>
-                 <Image src={data} width={200} height={300} alt="logos" />
+                 <Image src={data} width={100} height={100} alt="logos" />
                 </CarouselItem>
               ))}
             </CarouselContent>
