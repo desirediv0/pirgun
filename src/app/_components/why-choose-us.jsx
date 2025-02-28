@@ -107,15 +107,11 @@ export default function WhyChooseUs() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
+
                     <span>
                       From concept to completion, we ensure a smooth, efficient, and stress-free process for every project.
                     </span>
                   </div>
-                  {/* <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>Worldwide Visa Assistance</span>
-                  </div> */}
                 </div>
               </motion.div>
               <motion.div
@@ -132,15 +128,10 @@ export default function WhyChooseUs() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
                       We provide comprehensive support at every stage, ensuring flawless execution and alignment with your vision.
                     </span>
                   </div>
-                  {/* <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>Worldwide Visa Assistance</span>
-                  </div> */}
                 </div>
               </motion.div>
               <motion.div
@@ -157,15 +148,10 @@ export default function WhyChooseUs() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
                       We collaborate closely to bring your vision to life, delivering results that reflect your unique goals and aspirations.
                     </span>
                   </div>
-                  {/* <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>Worldwide Visa Assistance</span>
-                  </div> */}
                 </div>
               </motion.div>
 
@@ -183,43 +169,14 @@ export default function WhyChooseUs() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-gray-600">
-                    {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
+
                     <span>
                       Our solutions are designed for seamless compatibility, making implementation easy and disruption-free.
                     </span>
                   </div>
-                  {/* <div className="flex items-center gap-2 text-gray-600">
-                    <Check className="h-5 w-5 text-[#87BD2B]" />
-                    <span>Infinity Visa Solutions</span>
-                  </div> */}
+
                 </div>
               </motion.div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4">
-              {/* <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "#00488D" }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center rounded-full border-2 border-[#87BD2B] px-6 py-3 font-semibold text-[#87BD2B] transition-all hover:text-white hover:border-[#00488D]"
-              >
-                Read More
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </motion.button> */}
-
-              {/* <div className="flex items-center gap-3">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[#87BD2B]"
-                >
-                  <Phone className="h-6 w-6 text-white" />
-                </motion.div>
-                <div>
-                  <div className="text-sm text-gray-600">Need help?</div>
-                  <div className="font-semibold text-[#87BD2B]">
-                    +911247118233
-                  </div>
-                </div>
-              </div> */}
             </div>
           </motion.div>
         </div>
