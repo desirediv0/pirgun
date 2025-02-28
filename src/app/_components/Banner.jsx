@@ -115,7 +115,7 @@ export default function Banner() {
             loop
             className="absolute inset-0 h-full w-full object-cover will-change-transform"
           >
-            <source src="/bannner-vd2.mp4" type="video/mp4" />
+            <source src="/new-b-v.mp4" type="video/mp4" />
           </video>
 
           {/* Overlay */}
