@@ -22,8 +22,11 @@ export default function WhyChooseUs() {
           "/logo1.4.png",
           "/logo1.5.png",
           "/logo1.6.png",
-          
+
         ]}
+        autoSlide={true}
+        slideInterval={3000}
+        pauseOnHover={true}
         className="mt-5"
       />
       <div className="container mx-auto px-4">
@@ -102,7 +105,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                    From concept to completion, we ensure a smooth, efficient, and stress-free process for every project.
+                      From concept to completion, we ensure a smooth, efficient, and stress-free process for every project.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -127,7 +130,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                    We provide comprehensive support at every stage, ensuring flawless execution and alignment with your vision.
+                      We provide comprehensive support at every stage, ensuring flawless execution and alignment with your vision.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -152,7 +155,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                    We collaborate closely to bring your vision to life, delivering results that reflect your unique goals and aspirations.
+                      We collaborate closely to bring your vision to life, delivering results that reflect your unique goals and aspirations.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">
@@ -178,7 +181,7 @@ export default function WhyChooseUs() {
                   <div className="flex items-center gap-2 text-gray-600">
                     {/* <Check className="h-5 w-5 text-[#87BD2B]" /> */}
                     <span>
-                    Our solutions are designed for seamless compatibility, making implementation easy and disruption-free.
+                      Our solutions are designed for seamless compatibility, making implementation easy and disruption-free.
                     </span>
                   </div>
                   {/* <div className="flex items-center gap-2 text-gray-600">

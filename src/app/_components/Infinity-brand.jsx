@@ -2,92 +2,91 @@
 
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion } from "framer-motion";
 
 const InfiniteBrand = ({
   brands = [],
-  direction = "left",
-  speed = "fast",
   pauseOnHover = true,
   className = ""
 }) => {
-  const containerRef = React.useRef(null);
-  const scrollerRef = React.useRef(null);
-  const [start, setStart] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, []);
+  // Ensure we have enough brands by duplicating if necessary
+  const displayBrands = brands.length >= 8 ? brands : [...brands, ...brands, ...brands];
 
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
+  const marqueeVariants = {
+    animate: {
+      x: [0, -50 * displayBrands.length],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: displayBrands.length * 2,
+          ease: "linear"
         }
-      });
-
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-
-  const getDirection = () => {
-    if (containerRef.current) {
-      containerRef.current.style.setProperty(
-        "--animation-direction",
-        direction === "left" ? "forwards" : "reverse"
-      );
-    }
-  };
-
-  const getSpeed = () => {
-    if (containerRef.current) {
-      const speedOptions = {
-        fast: "20s",
-        normal: "40s",
-        slow: "80s"
-      };
-      containerRef.current.style.setProperty(
-        "--animation-duration",
-        speedOptions[speed] || "40s"
-      );
+      }
+    },
+    paused: {
+      x: [0, -50 * displayBrands.length],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: displayBrands.length * 2,
+          ease: "linear",
+          paused: true
+        }
+      }
     }
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={cn(
-        "scroller relative z-20 max-w-7xl overflow-hidden mx-auto my-8 px-4 [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-        className
-      )}
-    >
-      <div
-        ref={scrollerRef}
-        className={cn(
-          "flex min-w-full shrink-0 gap-8 py-8 w-max flex-nowrap items-center",
-          start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
-        )}
-      >
-        {brands.map((brand, idx) => (
-          <div
-            key={idx}
-            className="w-[150px] h-[100px] flex-shrink-0 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 mx-4"
+    <div className={cn("relative max-w-7xl mx-auto my-16 px-4", className)}>
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold text-[#00498b]">Our Trusted Brands</h2>
+        <div className="w-24 h-1 bg-[#89bb25] mx-auto mt-3" />
+      </div>
+
+      {/* Carousel container with gradient edges */}
+      <div className="relative overflow-hidden">
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10" />
+
+        <div
+          ref={containerRef}
+          className="overflow-hidden"
+          onMouseEnter={() => pauseOnHover && setIsPaused(true)}
+          onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+        >
+          <motion.div
+            className="flex items-center gap-8 py-6"
+            variants={marqueeVariants}
+            animate={isPaused ? "paused" : "animate"}
           >
-            <Image
-              src={brand}
-              width={180}
-              height={100}
-              alt="Brand Logo"
-              className="object-contain w-full h-full hover:opacity-80 transition-opacity"
-            />
-          </div>
-        ))}
+            {displayBrands.map((brand, idx) => (
+              <motion.div
+                key={idx}
+                className="flex-shrink-0 px-4"
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className="">
+                  <div className="relative w-[200px] h-[100px]">
+                    <Image
+                      src={brand}
+                      alt={`Brand Logo ${idx + 1}`}
+                      fill
+                      sizes="300px"
+                      className="object-contain"
+                      style={{ maxWidth: "100%", maxHeight: "100%" }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );
