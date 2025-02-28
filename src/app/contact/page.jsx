@@ -1,11 +1,9 @@
 "use client"
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, MapPin, Smile } from "lucide-react";
+import { Mail, Smile } from "lucide-react";
 import React, { useEffect, useState } from 'react';
 import Hero from '../_components/Hero';
-import Image from "next/image";
-import Form from "../_components/form";
 import { NewForm } from "../_components/new-form";
 
 
@@ -16,27 +14,12 @@ const contactInfo = [
     value: "info@pirgunairsystems.com ",
     color: "#87BD2B",
   },
-
-  // {
-  //   icon: MapPin,
-  //   title: "Office Location",
-  //   value: "Dwarka, New Delhi, India",
-  //   color: "#87BD2B",
-  // },
 ];
 
 
 const greetings = [
   { text: "Hello!", lang: "English" },
   { text: "नमस्ते!", lang: "Hindi" },
-  // { text: "¡Hola!", lang: "Spanish" },
-  // { text: "Bonjour!", lang: "French" },
-  // { text: "Ciao!", lang: "Italian" },
-  // { text: "こんにちは!", lang: "Japanese" },
-  // { text: "안녕하세요!", lang: "Korean" },
-  // { text: "Hej!", lang: "Swedish" },
-  // { text: "Hallo!", lang: "German" },
-  // { text: "Olá!", lang: "Portuguese" },
 ];
 
 export default function Contact() {

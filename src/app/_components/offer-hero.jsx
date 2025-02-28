@@ -1,9 +1,7 @@
 "use client"
 
-import Image from "next/image"
 import { Map } from "lucide-react"
 import { motion } from "framer-motion"
-import Form from "./form"
 import { NewForm } from "./new-form"
 
 // Animation variants
