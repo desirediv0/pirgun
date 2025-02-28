@@ -18,8 +18,10 @@ import {
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
+
+
 const stats = [
-  { number: "10k+", value: 10000, label: "Complete Projects" },
+  { number: "100+", value: 100, label: "Complete Projects" },
   { number: "50+", value: 50, label: "Team Members" },
   { number: "200+", value: 200, label: "Cities Serving Capabilities" },
   { number: "99%", value: 99, label: "Happy Customers" },

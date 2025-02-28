@@ -22,12 +22,7 @@ export default function WhyChooseUs() {
           "/logo1.4.png",
           "/logo1.5.png",
           "/logo1.6.png",
-
         ]}
-        autoSlide={true}
-        slideInterval={3000}
-        pauseOnHover={true}
-        className="mt-5"
       />
       <div className="container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-2">
