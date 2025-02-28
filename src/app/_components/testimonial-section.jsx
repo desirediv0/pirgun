@@ -62,9 +62,7 @@ export function TestimonialSection() {
   return (
     <section className="py-16 px-8">
       {/* <h1 className="md:text-5xl text-4xl  "> </h1> */}
-      <h2 className="  md:text-5xl text-4xl font-bold text-[#004225] mb-12 text-center">
-        Client Testimonials
-      </h2>
+
       <div className="grid lg:grid-cols-2 gap-8 items-center max-w-7xl mx-auto px-4 ">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
