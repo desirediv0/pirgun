@@ -65,52 +65,48 @@ export default function Contact() {
 
       <section className="bg-gradient-to-b from-white to-gray-50">
         {/* Main Contact Section */}
-          <div className="grid md:grid-cols-2 gap-8 items-center px-4 py-16">
-            {/* Left Column */}
-            <motion.div
-              className="flex items-center gap-4"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-4xl md:text-5xl  font-bold text-gray-800">
-                Say
-              </span>
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={currentGreeting}
-                  className="text-4xl md:text-5xl  font-bold text-gray-800 flex items-center gap-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {greetings[currentGreeting].text}
-                 
-                </motion.h1>
-              </AnimatePresence>
-              <Smile className="w-8 h-8 md:w-12 md:h-12 " />
-            </motion.div>
+        <div className="grid md:grid-cols-2 gap-8 items-center px-4 py-16">
+          {/* Left Column */}
+          <motion.div
+            className="flex items-center gap-4"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-4xl md:text-5xl  font-bold text-gray-800">
+              Say
+            </span>
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={currentGreeting}
+                className="text-4xl md:text-5xl  font-bold text-gray-800 flex items-center gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {greetings[currentGreeting].text}
+              </motion.h1>
+            </AnimatePresence>
+            <Smile className="w-8 h-8 md:w-12 md:h-12 " />
+          </motion.div>
 
-            {/* Right Column */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <p className="text-xs md:text-sm  text-gray-600">
-                We&apos;re here to help and answer any question you might have.
-                we look forward to hearing from you. any need help you please
-                contact us or meet to office with coffee.
-              </p>
-            </motion.div>
-          </div>
+          {/* Right Column */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <p className="text-xs md:text-sm  text-gray-600">
+              We&apos;re here to help and answer any question you might have. we
+              look forward to hearing from you. any need help you please contact
+              us or meet to office with coffee.
+            </p>
+          </motion.div>
+        </div>
         <div className="container mx-auto px-4 py-10">
-
-         
-
           {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-8 ">
+          <div className="container gap-8  md:mx-48  md:max-w-4xl ">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -155,13 +151,9 @@ export default function Contact() {
               />
             </motion.div>
 
-            <Form/>
-
-           
+            <Form />
           </div>
         </div>
-
-      
       </section>
     </>
   );
