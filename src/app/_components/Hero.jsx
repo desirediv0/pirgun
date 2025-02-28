@@ -1,9 +1,12 @@
+import AnimatedDots from '@/components/AnimatedDots';
 import Image from 'next/image'
 import React from 'react'
 
 export default function Hero({ bgImage, Heading, className }) {
   return (
     <div className="relative w-full h-[250px] lg:h-[350px]">
+      <AnimatedDots
+      />
       <Image
         src={`/${bgImage}`}
         alt="Contact Banner"

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 import { ChevronDown, Router } from "lucide-react"
 import { useRouter } from "next/navigation"
+import AnimatedDots from "@/components/AnimatedDots"
 
 
 const slides = [
@@ -28,7 +29,7 @@ const stats = [
 
 export default function Banner() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  
+
   const router = useRouter();
   const handleClick = () => {
     router.push("/contact")
@@ -46,6 +47,8 @@ export default function Banner() {
   return (
     <>
       <div className="relative h-screen w-full">
+        <AnimatedDots
+        />
         <div className="relative h-screen w-full">
           {/* Background Video */}
           <video
@@ -91,9 +94,8 @@ export default function Banner() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`h-2 w-2 rounded-full transition-all ${
-                    currentSlide === index ? "w-4 bg-[#87BD2B]" : "bg-white/50"
-                  }`}
+                  className={`h-2 w-2 rounded-full transition-all ${currentSlide === index ? "w-4 bg-[#87BD2B]" : "bg-white/50"
+                    }`}
                 />
               ))}
             </div>
