@@ -14,9 +14,9 @@ import {
   Wrench,
   ArrowRight,
   CheckCircle,
-  ExternalLink,
 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/navigation";
 
 
 
@@ -71,6 +71,7 @@ const mission = [
 const AboutPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [activeTab, setActiveTab] = useState("mission");
+  const router = useRouter();
 
   // Add state for stats counter
   const [countUp, setCountUp] = useState([0, 0, 0, 0]);
@@ -215,6 +216,7 @@ const AboutPage = () => {
             <motion.div variants={itemVariant}>
               <Button
                 size="lg"
+                onClick={() => router.push("/contact")}
                 className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:shadow-lg hover:scale-105 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -328,18 +330,7 @@ const AboutPage = () => {
                 </h4>
                 <p className="text-gray-600">{usp.description}</p>
 
-                <motion.div
-                  className="mt-6 flex items-center text-[#89bb25] font-medium"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: hoveredCard === index ? 1 : 0,
-                    x: hoveredCard === index ? 0 : -10
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <span>Learn more</span>
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </motion.div>
+
               </motion.div>
             ))}
           </div>
@@ -483,14 +474,7 @@ const AboutPage = () => {
                   meet the needs of today but anticipate the challenges of tomorrow,
                   creating environments that inspire productivity and well-being.
                 </p>
-                <div className="flex justify-end mt-6">
-                  <motion.div
-                    className="p-3 rounded-full bg-[#89bb25]/10 text-[#89bb25]"
-                    whileHover={{ scale: 1.1, backgroundColor: "rgba(137, 187, 37, 0.2)" }}
-                  >
-                    <ExternalLink className="h-5 w-5" />
-                  </motion.div>
-                </div>
+
               </motion.div>
             )}
           </AnimatePresence>
@@ -523,18 +507,7 @@ const AboutPage = () => {
             project management. Let&apos;s create sustainable, efficient, and
             innovative solutions together.
           </motion.p>
-          <motion.div
-            variants={itemVariant}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-[#89bb25] to-[#00498b] text-white hover:shadow-lg transition-all duration-300 px-8"
-            >
-              Start Your Journey <ArrowRight className="ml-2" />
-            </Button>
-          </motion.div>
+
         </motion.div>
       </div>
     </div>

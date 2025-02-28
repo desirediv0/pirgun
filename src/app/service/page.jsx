@@ -298,22 +298,6 @@ export default function Service() {
                   ))}
                 </motion.div>
 
-                <motion.div
-                  className="mt-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{
-                    opacity: hoveredCard === idx ? 1 : 0,
-                    y: hoveredCard === idx ? 0 : 10
-                  }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link href="/contact">
-                    <span className="inline-flex items-center text-sm font-medium" style={{ color: service.color }}>
-                      Learn more about this service
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </span>
-                  </Link>
-                </motion.div>
               </div>
             </motion.div>
           ))}
