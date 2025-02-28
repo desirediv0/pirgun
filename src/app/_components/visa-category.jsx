@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
-import { Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from "lucide-react"
+// import { Binoculars, GraduationCap, MapPinHouse, ShieldCheck } from "lucide-react"
 
 const visaTypes = [
   {
@@ -11,7 +11,7 @@ const visaTypes = [
     description:
       "  - Ensuring compliance, precision, and high-quality solutions for drug manufacturing, supplements, and wellness products. ",
     image: "/pharmaceuticals.png",
-    icon: ShieldCheck,
+  
     link: "/services/pharmaceuticals",
   },
   {
@@ -19,14 +19,14 @@ const visaTypes = [
     description:
       "   - Providing innovative, hygienic, and regulatory-compliant solutions for safe food processing and packaging.",
     image: "/food.jpeg",
-    icon: MapPinHouse,
+    
     link: "/services/food-beverages",
   },
   {
     title: "Cosmetics & Personal Care",
     description:
       " - Enhancing product quality, aesthetics, and brand value with premium solutions for the beauty and personal care industry. ",
-    icon: GraduationCap,
+   
     image: "/cosmo.jpeg",
     link: "/services/cosmetics",
   },
@@ -34,7 +34,7 @@ const visaTypes = [
     title: "Medical, Labs & Surgical",
     description:
       " - Supporting laboratories, diagnostics, and medical devices with cutting-edge solutions to ensure accuracy, safety, and efficiency ",
-    icon: Binoculars,
+    
     image: "/medical.png",
     link: "/services/medical",
   },
@@ -156,7 +156,7 @@ export default function VisaCategories() {
                     }}
                     transition={{ delay: 0.1 }}
                   >
-                    <visa.icon size={40} className="text-white mb-2" />
+                    {/* <visa.icon size={40} className="text-white mb-2" /> */}
                   </motion.div>
                 </motion.div>
               </div>

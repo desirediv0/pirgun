@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import Hero from '../_components/Hero';
 import Image from "next/image";
 import Form from "../_components/form";
+import { NewForm } from "../_components/new-form";
 
 
 const contactInfo = [
@@ -86,7 +87,6 @@ export default function Contact() {
                 transition={{ duration: 0.3 }}
               >
                 {greetings[currentGreeting].text}
-
               </motion.h1>
             </AnimatePresence>
             <Smile className="w-8 h-8 md:w-12 md:h-12 " />
@@ -99,18 +99,15 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-xs md:text-sm  text-gray-600">
-              We&apos;re here to help and answer any question you might have.
-              we look forward to hearing from you. any need help you please
-              contact us or meet to office with coffee.
+              We&apos;re here to help and answer any question you might have. we
+              look forward to hearing from you. any need help you please contact
+              us or meet to office with coffee.
             </p>
           </motion.div>
         </div>
         <div className="container mx-auto px-4 py-10">
-
-
-
           {/* Contact Cards */}
-          <div className="grid md:grid-cols-2 gap-8 ">
+          <div className="container gap-8  md:mx-48  md:max-w-4xl ">
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
@@ -138,30 +135,9 @@ export default function Contact() {
         </div>
 
         {/* Contact Form Section */}
-        <div className="py-16 ">
-          <div className="grid lg:grid-cols-2 gap-12 items-center  px-4">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="relative"
-            >
-              <Image
-                src="/contact.jpeg"
-                width={600}
-                height={600}
-                alt="Contact Us"
-                className="rounded-md h-[550px]  object-cover"
-              />
-            </motion.div>
-
-            <Form />
-
-
-          </div>
+        <div className="px-4 py-10">
+          <NewForm />
         </div>
-
-
       </section>
     </>
   );
