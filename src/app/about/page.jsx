@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,10 @@ import {
 import { useInView } from "react-intersection-observer";
 
 const stats = [
-  { number: "10k+", label: "Complete Projects" },
-  { number: "50+", label: "Team Members" },
-  { number: "200+", label: "Cities Serving Capabilities" },
-  { number: "99%", label: "Happy Customers" },
+  { number: "10k+", value: 10000, label: "Complete Projects" },
+  { number: "50+", value: 50, label: "Team Members" },
+  { number: "200+", value: 200, label: "Cities Serving Capabilities" },
+  { number: "99%", value: 99, label: "Happy Customers" },
 ];
 
 const usps = [
@@ -70,6 +70,11 @@ const AboutPage = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [activeTab, setActiveTab] = useState("mission");
 
+  // Add state for stats counter
+  const [countUp, setCountUp] = useState([0, 0, 0, 0]);
+  const [isVisible, setIsVisible] = useState(false);
+  const statsCountRef = useRef(null);
+
   // Animations for scroll-triggered elements
   const introControls = useAnimation();
   const chooseUsControls = useAnimation();
@@ -90,7 +95,66 @@ const AboutPage = () => {
     if (statsInView) statsControls.start("visible");
     if (missionVisionInView) missionVisionControls.start("visible");
     if (ctaInView) ctaControls.start("visible");
-  }, [introInView, chooseUsInView, statsInView, missionVisionInView, ctaInView]);
+  }, [introInView, chooseUsInView, statsInView, missionVisionInView, ctaInView,
+    introControls, chooseUsControls, statsControls, missionVisionControls, ctaControls]);
+
+  // Set up intersection observer for the stats counter
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (statsCountRef.current) {
+      observer.observe(statsCountRef.current);
+    }
+
+    return () => {
+      if (statsCountRef.current) {
+        observer.unobserve(statsCountRef.current);
+      }
+    };
+  }, []);
+
+  // Start counting animation when stats section becomes visible
+  useEffect(() => {
+    if (isVisible) {
+      const counters = stats.map(stat => {
+        return {
+          value: parseInt(stat.value),
+          duration: 2000, // 2 seconds to count up
+        };
+      });
+
+      const intervals = counters.map((counter, index) => {
+        const stepTime = counter.duration / counter.value;
+        let currentCount = 0;
+        const increment = Math.max(1, Math.floor(counter.value / 100)); // Faster increment for larger numbers
+
+        return setInterval(() => {
+          currentCount += increment;
+
+          setCountUp(prev => {
+            const newCounts = [...prev];
+            newCounts[index] = Math.min(currentCount, counter.value);
+            return newCounts;
+          });
+
+          if (currentCount >= counter.value) {
+            clearInterval(intervals[index]);
+          }
+        }, stepTime);
+      });
+
+      return () => {
+        intervals.forEach(interval => clearInterval(interval));
+      };
+    }
+  }, [isVisible]);
 
   // Animation variants
   const containerVariant = {
@@ -287,32 +351,28 @@ const AboutPage = () => {
           animate={statsControls}
           className="mb-24"
         >
-          <div className="bg-gradient-to-r from-[#f9fcf4] to-[#f0f7ea] rounded-3xl p-8 shadow-lg">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div
+            ref={statsCountRef}
+            className="bg-gradient-to-r from-[#f9fcf4] to-[#f0f7ea] rounded-3xl p-8 shadow-lg"
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  variants={itemVariant}
-                  whileHover={{ scale: 1.05 }}
-                  className="text-center p-6 bg-white rounded-xl shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center"
                 >
-                  <motion.h3
-                    className="text-4xl md:text-5xl font-bold text-[#89bb25]"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    {stat.number}
-                  </motion.h3>
-                  <motion.div
-                    className="w-12 h-1 bg-[#00498b]/30 mx-auto my-3"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: 48 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  />
-                  <p className="text-gray-600 text-sm">{stat.label}</p>
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#00498b]">
+                    {isVisible
+                      ? (stat.number.includes('k+')
+                        ? `${countUp[index] / 1000}k+`
+                        : `${countUp[index]}${stat.number.includes('+') ? '+' : stat.number.includes('%') ? '%' : ''}`)
+                      : "0"}
+                  </h3>
+                  <p className="text-[#00498b]/80 text-sm mt-1">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
