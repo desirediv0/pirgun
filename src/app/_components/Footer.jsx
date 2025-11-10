@@ -95,17 +95,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
           <p className="text-white/80">© 2025 Pirgun Air Systems | All Rights Reserved</p>
-          <p className="text-white/80">
-            Designed with <span className="text-red-500">❤</span> by {" "}
-            <a
-              href="https://desirediv.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#7AB641] transition-colors font-medium"
-            >
-              Desire Div
-            </a>
-          </p>
+
         </div>
       </div>
     </footer>
