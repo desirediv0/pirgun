@@ -13,24 +13,16 @@ export default function WhyChooseUs() {
     <section className="py-16 bg-[url(/logo-icon-bg.png)] bg-no-repeat bg-auto bg-center bg-[#87BD2B]/5">
       <InfiniteBrand
         brands={[
-          "/lupin.png",
-          "/logo1.1.png",
-          "/akums.webp",
-          "/nectar.png",
-          "/logo1.2.png",
-          "/logo1.3.png",
-          "/logo1.4.png",
-          "/logo1.5.png",
-          "/logo1.6.png",
-          "/lupin.png",
-          "/logo1.1.png",
-          "/akums.webp",
-          "/nectar.png",
-          "/logo1.2.png",
-          "/logo1.3.png",
-          "/logo1.4.png",
-          "/logo1.5.png",
-          "/logo1.6.png",
+          "/logos/amway.png",
+          "/logos/apollo.png",
+          "/logos/cachet.png",
+          "/logos/hamdard.png",
+          "/logos/hk.png",
+          "/logos/ikrish.png",
+          "/logos/jubilant.png",
+          "/logos/laurs.png",
+          "/logos/max.png",
+          "/logos/nectar.png",
         ]}
       />
       <div className="container mx-auto px-4">

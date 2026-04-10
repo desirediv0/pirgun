@@ -21,7 +21,7 @@ export default function Footer() {
       />
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-8 grid lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-8 grid lg:grid-cols-3 gap-8">
         {/* Brand Section */}
         <div className="space-y-2 text-left">
           <Link href="/" className="flex items-start gap-2 text-2xl font-bold">
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div>
+        {/* <div>
           <h4 className="text-xl font-semibold mb-4">Subscribe Our Newsletter</h4>
           <form onSubmit={(e) => e.preventDefault()} className="flex">
             <input
@@ -88,7 +88,7 @@ export default function Footer() {
               <Send className="w-6 h-6" />
             </button>
           </form>
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Bar */}
