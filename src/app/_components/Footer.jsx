@@ -34,7 +34,7 @@ export default function Footer() {
             />
           </Link>
           <p className="text-white/80 text-left">
-            At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re innovators, problem-solvers, and visionaries.
+            At Pirgun, we&apos;re not just engineers – we&apos;re innovators, problem-solvers, and visionaries.
           </p>
 
         </div>
@@ -94,7 +94,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
-          <p className="text-white/80">© 2025 Pirgun Air Systems | All Rights Reserved</p>
+          <p className="text-white/80">© 2025 Pirgun | All Rights Reserved</p>
 
         </div>
       </div>

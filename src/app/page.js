@@ -13,7 +13,7 @@ export default function Home() {
       <VisaCategories />
       <InfiniteTextScroll
         text="Testimonials"
-        content={"As a non-technical person, managing this project seemed overwhelming, but Pirgun Air Systems made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution."}
+        content={"As a non-technical person, managing this project seemed overwhelming, but Pirgun made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution."}
       />
       <TestimonialSection />
       <OfferHero />

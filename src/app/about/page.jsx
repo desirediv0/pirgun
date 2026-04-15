@@ -202,7 +202,7 @@ const AboutPage = () => {
               <span className="text-[#89bb25]">Let&apos;s Make It Happen</span>
             </h2>
             <motion.p variants={itemVariant} className="text-gray-700 leading-relaxed text-lg">
-              At Pirgun Air Systems, we&apos;re not just engineers – we&apos;re
+              At Pirgun, we&apos;re not just engineers – we&apos;re
               innovators, problem-solvers, and visionaries. Our mission is to
               revolutionize project execution & project technologies with
               cutting-edge technology and unparalleled expertise.
@@ -298,7 +298,7 @@ const AboutPage = () => {
           <motion.div variants={itemVariant} className="text-center mb-12">
             <span className="text-[#89bb25] font-semibold uppercase tracking-wider text-sm">Our Strengths</span>
             <h3 className="text-3xl font-bold text-[#00498b] mt-2">
-              Why Choose Pirgun Air Systems?
+              Why Choose Pirgun?
             </h3>
             <div className="w-24 h-1 bg-[#89bb25] mx-auto mt-4" />
           </motion.div>
@@ -503,7 +503,7 @@ const AboutPage = () => {
             variants={itemVariant}
             className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto"
           >
-            Join hands with Pirgun Air Systems and experience the future of
+            Join hands with Pirgun and experience the future of
             project management. Let&apos;s create sustainable, efficient, and
             innovative solutions together.
           </motion.p>

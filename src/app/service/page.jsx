@@ -158,7 +158,7 @@ export default function Service() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-gray-600 text-lg"
           >
-            At Pirgun Air Systems, we offer a complete suite of services designed to streamline project execution,
+            At Pirgun, we offer a complete suite of services designed to streamline project execution,
             ensure compliance, and optimize costs. From concept to commissioning, we take care of everything—so you
             can focus on what matters most.
           </motion.p>

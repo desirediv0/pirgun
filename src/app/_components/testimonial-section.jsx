@@ -9,36 +9,49 @@ import Image from "next/image"
 const testimonials = [
   {
     quote:
-      "Pirgun Air Systems has been our one-stop solution for every project challenge. Their expertise and innovation helped us achieve a specialized technology at a minimal cost. With a structured approach and commitment, they ensure seamless execution. Simply pay on time, and they deliver excellence. Highly recommended for Turnkey Clean Room solutions.",
+      "Pirgun has been our one-stop solution for every project challenge. Their expertise and innovation helped us achieve a specialized technology at a minimal cost. With a structured approach and commitment, they ensure seamless execution. Simply pay on time, and they deliver excellence. Highly recommended for Turnkey Clean Room solutions.",
     author: "Mr. Kapil Mittal, CSO, Power Gummies",
     icon: "",
     avatar: "/testimonial1.png",
+    isLogo: false,
     rating: 5,
   },
   {
     quote:
-      "Pirgun Air Systems has been our trusted partner for multiple projects, delivering excellence every time. With their expertise, structured approach, and commitment, they have successfully completed five projects for us and continue to be our go-to choice. A truly reliable partner—we highly recommend them for Turnkey Clean Room solutions.",
-    author: "Ishwar Sharan, IVD Consultant",
+      "Pirgun has been a reliable partner for our Project requirements. Their team demonstrates strong technical expertise, timely execution, and a highly professional approach. The project was delivered smoothly with proper coordination and attention to detail. We appreciate their commitment to quality and would confidently recommend them for turnkey air system solutions.",
+    author: "Team HealthKart",
     icon: "",
-    avatar: "/testimonial2.png",
+    avatar: "/logos/hk.png",
+    isLogo: true,
     rating: 5,
   },
   {
     quote:
-      "As a non-technical person, managing this project seemed overwhelming, but Pirgun Air Systems made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution. During the drug audit, officials praised our plant as the best in North India. Truly a game-changer—highly recommended!",
-    author: "Dharamveer, Director, HHA Healthcare",
+      "As a non-technical person, managing this project seemed overwhelming, but Pirgun made it seamless. They streamlined everything on a turnkey basis, ensuring cost savings and top-quality execution. During the drug audit, officials praised our plant as the best in North India. Truly a game-changer—highly recommended!",
+    author: "Dharamveer, Director, HHA Healthcare (Kosi)",
     icon: "",
     avatar: "/reviews (1).png",
+    isLogo: false,
     rating: 5,
   },
   {
     quote:
-      "Being a CA, I had no technical knowledge about setting up a tofu manufacturing unit. Without Pirgun Air Systems, the project could have gone wrong. They guided us at every step, aligned everything as per expert standards, and ensured seamless execution. Now, we proudly have North India’s first-of-its-kind tofu factory!",
+      "Working with Pirgun has been a really smooth experience for us. The team is professional, responsive, and genuinely committed to delivering quality work. What we appreciate most is their practical approach and how well they stick to timelines without compromising on execution. It's been a dependable partnership, and we look forward to working together on more projects.",
+    author: "Manu Chaudhary, Director, Laurs & Bridz",
+    icon: "",
+    avatar: "/logos/laurs.png",
+    isLogo: true,
+    rating: 5,
+  },
+  {
+    quote:
+      "Being a CA, I had no technical knowledge about setting up a tofu manufacturing unit. Without Pirgun, the project could have gone wrong. They guided us at every step, aligned everything as per expert standards, and ensured seamless execution. Now, we proudly have North India's first-of-its-kind tofu factory!",
     author: "Mr. Mohit Khanna, Director, Jiwanmitra Foods",
     icon: "",
     avatar: "/testimonial4.png",
+    isLogo: false,
     rating: 5,
-  }
+  },
 ];
 
 export function TestimonialSection() {
@@ -96,13 +109,26 @@ export function TestimonialSection() {
               </p>
 
               <div className="flex items-center gap-4">
-                <Image
-                  src={testimonials[currentIndex].avatar}
-                  alt={testimonials[currentIndex].author}
-                  width={60}
-                  height={60}
-                  className="rounded-full"
-                />
+                {testimonials[currentIndex].isLogo ? (
+                  <div className="bg-white rounded-xl p-2 flex items-center justify-center" style={{ width: 100, height: 60 }}>
+                    <Image
+                      src={testimonials[currentIndex].avatar}
+                      alt={testimonials[currentIndex].author}
+                      width={90}
+                      height={50}
+                      className="object-contain"
+                      style={{ objectFit: "contain" }}
+                    />
+                  </div>
+                ) : (
+                  <Image
+                    src={testimonials[currentIndex].avatar}
+                    alt={testimonials[currentIndex].author}
+                    width={60}
+                    height={60}
+                    className="rounded-full"
+                  />
+                )}
                 <div>
                   <h3 className="font-semibold text-xl">
                     {testimonials[currentIndex].author}

@@ -39,10 +39,11 @@ export default function Navbar() {
           >
             <Image
               src="/logo.png"
-              objectFit="contain"
-              width={160}
-              height={160}
-              alt="Logo"
+              style={{ objectFit: "contain" }}
+              width={200}
+              height={100}
+              alt="Pirgun Logo"
+              priority
             />
           </motion.div>
         </div>

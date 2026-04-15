@@ -14,7 +14,7 @@ const slides = [
     cta: "Explore",
   },
   {
-    title: "Pirgun Air Systems – Where Innovation Meets the Joy of Pleasant Flow",
+    title: "Pirgun – Where Innovation Meets the Joy of Pleasant Flow",
     description: "Delivering precision-engineered solutions to create safe, compliant, and energy-efficient spaces.",
     cta: "Explore",
   },
